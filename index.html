@@ -50,7 +50,9 @@
   --land:#15171a; --water:#153449; --park:#182a1c; --wlb:#5b7f99;
   --rd0:#4a4030; --rd1:#3a352c; --rd2:#282b30; --rail:#3a3f46;
 }}
+:root{color-scheme:light dark}   /* 讓原生下拉選單、輸入框跟著深色模式走 */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+select option{background:var(--card);color:var(--ink)}
 html,body{margin:0;padding:0;overscroll-behavior-y:none}
 body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;
   line-height:1.47;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;
@@ -421,10 +423,7 @@ nav button.on .fillc{fill:currentColor;fill-opacity:.17}
       </div>
       <div class="row">
         <span class="rl">分類</span>
-        <select id="cat" class="ri">
-          <option>餐飲</option><option>交通</option><option>門票</option>
-          <option>購物</option><option>住宿</option><option>按摩</option><option>其他</option>
-        </select>
+        <select id="cat" class="ri"></select>
       </div>
       <div class="row">
         <span class="rl">日期</span>
@@ -453,6 +452,11 @@ nav button.on .fillc{fill:currentColor;fill-opacity:.17}
       </div>
     </div>
     <p class="note">出發前用網路查一次填進來。越南盾常省略後面三個零，店家說「50」通常是 5 萬盾。</p>
+    <div id="catMineWrap" style="display:none">
+      <p class="ghead">我自己加的分類</p>
+      <div class="chips" id="catMine"></div>
+      <p class="note">點一下刪掉。已經記過的帳不受影響，分類名字會留著。</p>
+    </div>
     <button class="cta ghost" id="exp">複製成表格</button>
     <button class="cta ghost warn" id="clr">清空所有記帳</button>
   </section>
@@ -912,8 +916,21 @@ var BOOKINGS = [
       "確認能不能到 Lê Ngọc Hân 接"
     ], f:[["ref","訂單編號"],["url","訂單連結"],["tel","業者電話"]] },
   { id:"ins", b:"旅平險", lines:[
-      "含醫療。法越醫院、Vinmec 有國際醫療"
-    ], f:[["ref","保單號碼"],["tel","緊急聯絡電話"]] }
+      "① 先問 HR：9/29–10/2 是出差，公司可能已經保了團體旅平險",
+      "② 先看信用卡：機票刷卡付 80% 以上通常附旅遊不便險，別重複買",
+      "③ 買的時候確認四件事："
+    ],
+    f:[["ref","保險公司 + 保單號碼"],["tel","24 小時海外救援專線"],
+       ["url","保單電子檔連結"]] },
+  { id:"inschk", b:"旅平險要確認的四件事", lines:[
+      "1. 海外突發疾病醫療　建議 50 萬以上。東南亞最常見的是食物中毒和登革熱，",
+      "　 這些算「疾病」不算「意外」，基本旅平險不賠，一定要加保這項",
+      "2. 緊急救援與醫療轉送　醫療專機動輒上百萬，確認有含",
+      "3. 水上活動　10/4 下龍灣有遊船和獨木舟，確認不在除外條款裡",
+      "4. 旅程取消／更改　颱風封港的話下龍灣可能取消。注意：颱風一旦被命名",
+      "　 之後才投保就不賠了，要提早買",
+      "法定傳染病（登革熱）保障不是每家都有，要看條款"
+    ], f:[] }
 ];
 
 /* 每個分頁的大標題，切換時換掉 header（跟原生 app 一樣） */
@@ -925,12 +942,22 @@ var HEADS = {
   info:  ["資訊",     "天氣、開放時間、交通、緊急"]
 };
 
-/* 分類顏色，取 iOS 系統色 */
+/* 內建分類與顏色，取 iOS 系統色。使用者自己加的分類存在 hn-cats，
+   顏色從 CATPOOL 依名字決定（同一個名字永遠同一個顏色）。              */
+var BASECATS = ["餐飲", "交通", "門票", "購物", "住宿", "按摩", "其他"];
 var CATC = {
   "餐飲":"var(--cOrange)", "交通":"var(--brand)",  "門票":"var(--cIndigo)",
   "購物":"var(--cPurple)", "住宿":"var(--cGreen)", "按摩":"var(--cTeal)",
   "其他":"var(--faint)"
 };
+var CATPOOL = ["var(--cTeal)", "var(--cPurple)", "var(--cIndigo)", "var(--cGreen)",
+               "var(--cOrange)", "var(--brand)", "var(--cPink)"];
+function catColor(k) {
+  if (CATC[k]) { return CATC[k]; }
+  var h = 0, s = String(k);
+  for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) % 9973; }
+  return CATPOOL[h % CATPOOL.length];
+}
 var MAPC = { walk:"var(--brand)", car:"var(--cOrange)", out:"var(--cIndigo)", na:"var(--faint)" };
 
 /* 方向標示：往西要叫車、出城、上班固定 */
@@ -986,6 +1013,7 @@ var editMode = false;      /* 行程編輯模式 */
 var editIdx  = -1;         /* 正在編哪一站 */
 var cur      = "VND";
 var pm       = "cash";     /* 付款方式：cash 現金 / card 刷卡 */
+var cats     = load("hn-cats", []);  /* 使用者自己加的分類 */
 var filterDay = null;
 
 var $ = function (id) { return document.getElementById(id); };
@@ -1428,12 +1456,12 @@ function renderMoney() {
     return '<div class="brkrow"><span class="k">' + esc(k) + '<i>' + pct + '%</i></span>' +
       '<b>NT$' + nf(cats[k]) + '</b>' +
       '<span class="meter"><i style="width:' + pct + '%;background:' +
-      (CATC[k] || "var(--brand)") + '"></i></span></div>';
+      catColor(k) + '"></i></span></div>';
   }).join("");
 
   $("list").innerHTML = shown.length ? shown.slice().reverse().map(function (e) {
     return '<div class="row exp">' +
-      '<span class="ico" style="background:' + (CATC[e.k] || "var(--faint)") + '">' +
+      '<span class="ico" style="background:' + catColor(e.k) + '">' +
       esc(e.k.slice(0, 1)) + '</span>' +
       '<span class="m"><b>' + esc(e.t || e.k) + '</b>' +
       '<span>' + esc(e.d) + '　' + esc(e.k) + '　' +
@@ -1442,6 +1470,22 @@ function renderMoney() {
       (e.c === "VND" ? nf(e.a) + " ₫" : "") + '</span></span>' +
       '<button class="rm" data-rm="' + e.id + '" aria-label="刪除">✕</button></div>';
   }).join("") : '<p class="empty">還沒有記帳。<br>在上面加第一筆。</p>';
+}
+
+/* 分類下拉選單：內建 + 自訂 + 最後一個「自訂分類」 */
+function renderCats(sel) {
+  var all = BASECATS.concat(cats);
+  $("cat").innerHTML = all.map(function (k) {
+    return '<option value="' + esc(k) + '">' + esc(k) + '</option>';
+  }).join("") + '<option value="__new">＋ 自訂分類…</option>';
+  $("cat").value = (sel && all.indexOf(sel) >= 0) ? sel : all[0];
+  var chips = cats.length
+    ? cats.map(function (k) {
+        return '<button class="chip" data-catrm="' + esc(k) + '">' + esc(k) + ' ✕</button>';
+      }).join("")
+    : "";
+  $("catMine").innerHTML = chips;
+  $("catMineWrap").style.display = cats.length ? "block" : "none";
 }
 
 function addExp() {
@@ -1836,6 +1880,13 @@ document.addEventListener("click", function (ev) {
   var gqb = el.closest("[data-gq]");
   if (gqb) { gq = gqb.dataset.gq; renderMapPane(); return; }
 
+  var crm = el.closest("[data-catrm]");
+  if (crm) {
+    var ck2 = crm.dataset.catrm;
+    cats = cats.filter(function (x) { return x !== ck2; });
+    save("hn-cats", cats); renderCats(); return;
+  }
+
   var cp = el.closest("[data-cp]");
   if (cp) {
     var av = ADDR[+cp.dataset.cp].v;
@@ -1877,6 +1928,16 @@ $("cVnd").onclick = function () { cur = "VND"; this.classList.add("on"); $("cTwd
 $("pCash").onclick = function () { pm = "cash"; this.classList.add("on"); $("pCard").classList.remove("on"); };
 $("pCard").onclick = function () { pm = "card"; this.classList.add("on"); $("pCash").classList.remove("on"); };
 $("cTwd").onclick = function () { cur = "TWD"; this.classList.add("on"); $("cVnd").classList.remove("on"); };
+$("cat").onchange = function () {
+  if (this.value !== "__new") { return; }
+  var name = (window.prompt("新的分類名稱") || "").trim();
+  if (!name || name === "__new") { renderCats(); return; }
+  if (BASECATS.indexOf(name) < 0 && cats.indexOf(name) < 0) {
+    cats.push(name);
+    save("hn-cats", cats);
+  }
+  renderCats(name);
+};
 $("add").onclick = addExp;
 $("rate").onchange = function () {
   var v = parseFloat(this.value);
@@ -1903,6 +1964,7 @@ $("day").innerHTML = DAYS.map(function (D) {
   var hit = DAYS.filter(function (D) { return D.d === s; });
   if (hit.length) { $("day").value = s; curDay = hit[0].n; }
 })();
+renderCats();
 $("rate").value = rate;
 
 countdown();
