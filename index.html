@@ -395,6 +395,7 @@ nav button.on .fillc{fill:currentColor;fill-opacity:.17}
       <div class="lb" id="totLb">目前支出</div>
       <div class="big" id="totTwd">NT$0</div>
       <div class="sm" id="totVnd">0 ₫</div>
+      <div class="sm" id="totPm"></div>
     </div>
     <div class="chips" id="quickDays"></div>
 
@@ -409,6 +410,13 @@ nav button.on .fillc{fill:currentColor;fill-opacity:.17}
         <div class="seg">
           <button id="cVnd" class="on">₫ 盾</button>
           <button id="cTwd">NT$</button>
+        </div>
+      </div>
+      <div class="row">
+        <span class="rl">付款</span>
+        <div class="seg">
+          <button id="pCash" class="on">現金</button>
+          <button id="pCard">刷卡</button>
         </div>
       </div>
       <div class="row">
@@ -977,6 +985,7 @@ var edits    = load("hn-days", {}); /* 使用者在 App 裡改過的行程，{�
 var editMode = false;      /* 行程編輯模式 */
 var editIdx  = -1;         /* 正在編哪一站 */
 var cur      = "VND";
+var pm       = "cash";     /* 付款方式：cash 現金 / card 刷卡 */
 var filterDay = null;
 
 var $ = function (id) { return document.getElementById(id); };
@@ -1393,6 +1402,12 @@ function renderMoney() {
   $("totLb").textContent = filterDay ? filterDay + " 支出" : "目前支出";
   $("totTwd").textContent = "NT$" + nf(twd);
   $("totVnd").textContent = nf(twd * rate) + " ₫";
+  var cash = 0, card = 0;
+  shown.forEach(function (e) {
+    if (e.pm === "card") { card += toTwd(e); } else { cash += toTwd(e); }
+  });
+  $("totPm").textContent = shown.length
+    ? "現金 NT$" + nf(cash) + "　·　刷卡 NT$" + nf(card) : "";
 
   $("quickDays").innerHTML =
     '<button class="chip' + (filterDay ? "" : " on") + '" data-fd="">全部</button>' +
@@ -1421,7 +1436,8 @@ function renderMoney() {
       '<span class="ico" style="background:' + (CATC[e.k] || "var(--faint)") + '">' +
       esc(e.k.slice(0, 1)) + '</span>' +
       '<span class="m"><b>' + esc(e.t || e.k) + '</b>' +
-      '<span>' + esc(e.d) + '　' + esc(e.k) + '</span></span>' +
+      '<span>' + esc(e.d) + '　' + esc(e.k) + '　' +
+      (e.pm === "card" ? "刷卡" : "現金") + '</span></span>' +
       '<span class="v"><b>NT$' + nf(toTwd(e)) + '</b><span>' +
       (e.c === "VND" ? nf(e.a) + " ₫" : "") + '</span></span>' +
       '<button class="rm" data-rm="' + e.id + '" aria-label="刪除">✕</button></div>';
@@ -1434,7 +1450,7 @@ function addExp() {
   expenses.push({
     id: Date.now() + "" + Math.random().toString(36).slice(2, 6),
     a: a, c: cur, k: $("cat").value, d: $("day").value,
-    t: $("note").value.trim()
+    t: $("note").value.trim(), pm: pm
   });
   save("hn-exp", expenses);
   $("amt").value = ""; $("note").value = "";
@@ -1443,11 +1459,12 @@ function addExp() {
 }
 
 function expTsv() {
-  var r = [["日期", "分類", "備註", "原幣", "幣別", "台幣"].join("\t")];
+  var r = [["日期", "分類", "付款", "備註", "原幣", "幣別", "台幣"].join("\t")];
   expenses.forEach(function (e) {
-    r.push([e.d, e.k, e.t || "", e.a, e.c, Math.round(toTwd(e))].join("\t"));
+    r.push([e.d, e.k, (e.pm === "card" ? "刷卡" : "現金"), e.t || "", e.a, e.c,
+      Math.round(toTwd(e))].join("\t"));
   });
-  r.push(["", "", "", "", "合計", Math.round(
+  r.push(["", "", "", "", "", "合計", Math.round(
     expenses.reduce(function (s, e) { return s + toTwd(e); }, 0))].join("\t"));
   return r.join("\n");
 }
@@ -1857,6 +1874,8 @@ $("e_del").onclick = delEv;
 $("e_cp").onclick = copyDay;
 $("sheetX").onclick = closeSheet;
 $("cVnd").onclick = function () { cur = "VND"; this.classList.add("on"); $("cTwd").classList.remove("on"); };
+$("pCash").onclick = function () { pm = "cash"; this.classList.add("on"); $("pCard").classList.remove("on"); };
+$("pCard").onclick = function () { pm = "card"; this.classList.add("on"); $("pCash").classList.remove("on"); };
 $("cTwd").onclick = function () { cur = "TWD"; this.classList.add("on"); $("cVnd").classList.remove("on"); };
 $("add").onclick = addExp;
 $("rate").onchange = function () {
