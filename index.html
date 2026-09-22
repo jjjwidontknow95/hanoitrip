@@ -555,12 +555,16 @@ var DAYS = [
     { t:"18:05", x:"機場接送進市區", s:"約 28 km，45–55 分鐘。入住是下午 2 點後，密碼鑰匙盒自助進門", m:["van","接送 45–55 分"], p:"home", g:"@home" },
     { t:"19:30", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" }
   ]},
-  { n:2, d:"9/28", w:"週一", k:"free", lb:"教師節", nt:"週一皇城和多數博物館休館，排全戶外", ev:[
-    { t:"08:30", x:"巴亭廣場", s:"陵寢外觀、主席府、一柱廟，全戶外。★ 昇龍皇城週一休館，這天去不了", z:"c", m:["car","Grab"], p:"badinh", g:"Ba Dinh Square Hanoi" },
+  { n:2, d:"9/28", w:"週一", k:"free", lb:"教師節", nt:"週一皇城和民族學博物館休館，皇城改排 10/3（週六）", ev:[
+    { t:"08:30", x:"巴亭廣場", s:"陵寢外觀、主席府、一柱廟，全戶外。昇龍皇城週一休館，改排 10/3", z:"c", m:["car","Grab"], p:"badinh", g:"Ba Dinh Square Hanoi" },
     { t:"10:00", x:"文廟", s:"週一有開，7:30–18:00，門票 3 萬盾。離巴亭只有 850 公尺", m:["walk","走 12 分"], p:"temple", g:"Temple of Literature Hanoi" },
     { t:"11:20", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
-    { t:"13:00", x:"回市區午餐", s:"下午留白休息，皇城休館空出來的時間，想補行程也行", m:["car","Grab"], p:"home", g:"@home" },
-    { t:"17:00", x:"鎮國寺 → 西湖日落", s:"日落 17:35，接 Phan Dinh Phung 林蔭道", z:"c", m:["car","Grab"], p:"westlake", g:"Tran Quoc Pagoda Hanoi" }
+    { t:"13:00", x:"Chợ Hôm 一帶午餐", m:["car","Grab 回市區"], p:"chohom", g:"Cho Hom market Hanoi" },
+    { t:"14:00", x:"火爐監獄", s:"週一有開，8:00–17:00，門票 3–5 萬盾", m:["walk","走得到"], g:"Hoa Lo Prison Hanoi" },
+    { t:"15:15", x:"婦女博物館", s:"就在附近走得到，17:00 關門", m:["walk","走 5 分"], g:"Vietnamese Women's Museum Hanoi" },
+    { t:"16:30", x:"Grab 往西湖", s:"提早出發，才有時間走 Phan Dinh Phung 林蔭道", m:["car","Grab 15 分"], p:"westlake", g:"Phan Dinh Phung Street Hanoi" },
+    { t:"17:00", x:"鎮國寺 ＋ 西湖日落", s:"日落 17:35", z:"c", p:"westlake", g:"Tran Quoc Pagoda Hanoi" },
+    { t:"19:00", x:"晚餐", m:["car","Grab 回市區"], p:"home", g:"@home" }
   ]},
   { n:3, d:"9/29", w:"週二", k:"work", lb:"上班", nt:"", ev:[
     { t:"09:00", x:"辦公室 Vietbank", s:"走路 11 分", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi" },
@@ -580,10 +584,13 @@ var DAYS = [
     { t:"09:00", x:"辦公室 Vietbank", s:"走路 11 分", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi" },
     { t:"19:00", x:"還劍湖週末步行街", s:"週五封街到週日午夜。Hàng Đào 到同春的週末夜市 18:00–23:00，小伴手禮這裡挑", m:["walk","走 20 分"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" }
   ]},
-  { n:7, d:"10/3", w:"週六", k:"free", lb:"週末", nt:"博物館唯一開得到的一天", ev:[
-    { t:"08:00", x:"越南民族學博物館", s:"8:30 開門，抓 2–3 小時，4 萬盾", z:"w", m:["car","Grab 18 分"], p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi" },
-    { t:"12:30", x:"紙橋 Nghĩa Đô", s:"在地小吃、巧廟、義都湖", z:"w", m:["car","Grab 短程"], p:"nghiado", g:"Nghia Do, Cau Giay, Hanoi" },
-    { t:"18:00", x:"住處附近吃飯 → 按摩", s:"早睡，隔天 7:30 出發", m:["car","Grab 回市區"], p:"chohom", g:"Cho Hom market Hanoi" }
+  { n:7, d:"10/3", w:"週六", k:"free", lb:"週末", nt:"民族學博物館和昇龍皇城唯一都開得到的一天（兩個都週一休館）", ev:[
+    { t:"08:30", x:"出發去民族學博物館", s:"8:30 開門，直接過去不用等", z:"w", m:["car","Grab 18 分"], p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi" },
+    { t:"09:00", x:"越南民族學博物館", s:"門票 4 萬盾。室內展館＋戶外民居抓 2.5 小時。週一休館，全程只有今天去得到", z:"w", p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi" },
+    { t:"11:30", x:"紙橋 Nghĩa Đô", s:"待約 1.5 小時。在地小吃當午餐、巧廟、義都湖", z:"w", m:["car","Grab 短程"], p:"nghiado", g:"Nghia Do, Cau Giay, Hanoi" },
+    { t:"13:30", x:"昇龍皇城", s:"★ 週一休館，今天週六有開。8:00–17:00、門票 7 萬盾。這是全程唯一進得去的一天", z:"c", m:["car","Grab 15 分"], p:"badinh", g:"Imperial Citadel of Thang Long Hanoi" },
+    { t:"15:30", x:"Grab 回市區", m:["car","Grab"], p:"home", g:"@home" },
+    { t:"18:00", x:"住處附近吃飯", s:"早睡，隔天 8:30 要到歌劇院集合去下龍灣", m:["walk","走得到"], p:"chohom", g:"Cho Hom market Hanoi" }
   ]},
   { n:8, d:"10/4", w:"週日", k:"trip", lb:"出城", nt:"08:30 出門、21:30 回來，13 小時。晚上不排東西", ev:[
     { t:"08:30", x:"河內歌劇院集合", s:"鑽石時代號一日遊。住處走路 11 分，提早 15–20 分到", m:["walk","走 11 分"], p:"opera", g:"Hanoi Opera House" },
@@ -598,11 +605,9 @@ var DAYS = [
     { t:"08:00", x:"聖若瑟大教堂", s:"接 Phở 10 Lý Quốc Sư 早餐", m:["walk","走得到"], p:"cathedral", g:"St Joseph Cathedral Hanoi" },
     { t:"09:30", x:"36 古街、同春市場", s:"伴手禮主力：Hàng Đường 蜜餞街、Star Kitchen、Hàng Gai 絲綢。10:45 前回住處放東西", m:["walk","走得到"], p:"oldq", g:"Dong Xuan Market Hanoi" },
     { t:"11:20", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
-    { t:"13:00", x:"回市區午餐", m:["car","Grab 20 分"], p:"chohom", g:"Cho Hom market Hanoi" },
-    { t:"14:00", x:"火爐監獄", s:"每日 8:00–17:00，週一有開，門票 3–5 萬盾", m:["walk","走得到"], g:"Hoa Lo Prison Hanoi" },
+    { t:"13:00", x:"回市區午餐 → 回住處休息", s:"前一晚下龍灣 21:30 才到，這段留白補眠。火爐監獄和婦女博物館改排 9/28", m:["car","Grab 20 分"], p:"chohom", g:"Cho Hom market Hanoi" },
     { t:"15:15", x:"火車街（白天）", s:"15:30 那班有光", m:["walk","走得到"], p:"train", g:"Hanoi Train Street Le Duan" },
-    { t:"16:15", x:"婦女博物館", s:"17:00 關門，只剩 45 分鐘，累就跳過", m:["walk","走得到"], g:"Vietnamese Women's Museum Hanoi" },
-    { t:"17:30", x:"住處附近晚餐 → 按摩", m:["walk","走得到"], p:"chohom", g:"Cho Hom market Hanoi" }
+    { t:"17:30", x:"住處附近晚餐", m:["walk","走得到"], p:"chohom", g:"Cho Hom market Hanoi" }
   ]},
   { n:10, d:"10/6", w:"週二", k:"free", lb:"回程", nt:"11:00 前退房，14:30 出發去機場", ev:[
     { t:"07:30", x:"胡志明陵", s:"免費，要長褲，不能背心短褲", z:"c", m:["car","Grab"], p:"badinh", g:"Ho Chi Minh Mausoleum Hanoi" },
@@ -852,7 +857,7 @@ var INFO = [
   { h:"開放時間", items:[
     { b:"越南民族學博物館", p:"週二–週日 8:30–17:30，週一休館。門票 4 萬盾。抓 2–3 小時走完室內和戶外民居。" },
     { b:"胡志明陵", p:"週一、週五休館，只開上午（約 7:30–10:30），免費。要穿長褲，不能背心、短褲，不能帶大包。" },
-    { b:"⚠️ 昇龍皇城　週一休館", p:"每天 8:00–17:00，週一休館，門票 7 萬盾。你的兩個自由日 9/28 和 10/5 都是週一，上班日又趕不上 17:00 關門——所以這趟大概去不成。真的想去只剩 10/6 早上（胡志明陵旁邊 500 公尺），但那天還要打包、退房、買伴手禮、14:30 去機場，會很趕。" },
+    { b:"昇龍皇城　週一休館　→ 排在 10/3 下午", p:"每天 8:00–17:00、週一休館、門票 7 萬盾。你兩個自由日 9/28 和 10/5 都是週一，上班日又趕不上 17:00 關門，本來以為這趟去不成——但 10/3 是週六，那天從紙橋回程正好順路，已經排進去了（13:30–15:30）。" },
     { b:"文廟", p:"每天有開（含週一），夏季 7:30–18:00、冬季 8:00–17:30，門票 3 萬盾。離巴亭廣場只有 850 公尺，走路 12 分鐘，兩站可以排在一起。" },
     { b:"火爐監獄", p:"每天 8:00–17:00，含週一，門票 3–5 萬盾。婦女博物館就在附近，一般也是每天 8:00–17:00，到現場確認。" },
     { b:"還劍湖步行街", p:"週五晚上 7 點封街，一路到週日午夜。你只有 10/2 逛得到。" },

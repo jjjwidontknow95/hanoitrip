@@ -1,4 +1,4 @@
-var CACHE = "hanoi-v31";
+var CACHE = "hanoi-v32";
 var FILES = [
   "./", "./index.html", "./manifest.webmanifest",
   "./icon-180.png", "./icon-192.png", "./icon-512.png"
