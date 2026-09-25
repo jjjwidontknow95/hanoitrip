@@ -1057,6 +1057,9 @@ var HEADS = {
 
 /* 內建分類與顏色，取 iOS 系統色。使用者自己加的分類存在 hn-cats，
    顏色從 CATPOOL 依名字決定（同一個名字永遠同一個顏色）。              */
+/* 記帳的「日期」除了行程那十天，多一個 PREDAY 給出發前就付掉的錢
+   （機票、住宿、eSIM、保險、預訂的接送和行程）。存進 hn-exp 的 d 欄位。 */
+var PREDAY = "出發前";
 var BASECATS = ["餐飲", "交通", "門票", "購物", "住宿", "按摩", "其他"];
 var CATC = {
   "餐飲":"var(--cOrange)", "交通":"var(--brand)",  "門票":"var(--cIndigo)",
@@ -1550,8 +1553,12 @@ function renderMoney() {
   $("totPm").textContent = shown.length
     ? "現金 NT$" + nf(cash) + "　·　刷卡 NT$" + nf(card) : "";
 
+  var preTot = expenses.filter(function (e) { return e.d === PREDAY; })
+                       .reduce(function (s, e) { return s + toTwd(e); }, 0);
   $("quickDays").innerHTML =
     '<button class="chip' + (filterDay ? "" : " on") + '" data-fd="">全部</button>' +
+    (preTot ? '<button class="chip' + (filterDay === PREDAY ? " on" : "") + '" data-fd="' +
+      PREDAY + '">' + PREDAY + '　' + nf(preTot) + '</button>' : "") +
     DAYS.map(function (D) {
       var t = expenses.filter(function (e) { return e.d === D.d; })
                       .reduce(function (s, e) { return s + toTwd(e); }, 0);
@@ -2071,13 +2078,16 @@ $("clr").onclick = function () {
 
 /* ------------------------------------------------------------------ boot */
 
-$("day").innerHTML = DAYS.map(function (D) {
+/* 「出發前」是給機票、住宿、eSIM、保險這種出發前就付掉的錢用的，
+   不然它們只能記在 9/27，會把第一天的金額灌爆。                      */
+$("day").innerHTML = '<option>' + PREDAY + '</option>' + DAYS.map(function (D) {
   return '<option>' + D.d + '</option>';
 }).join("");
 (function setToday() {
   var s = today();
   var hit = DAYS.filter(function (D) { return D.d === s; });
   if (hit.length) { $("day").value = s; curDay = hit[0].n; }
+  else { $("day").value = PREDAY; }   /* 還沒出發就預設「出發前」 */
 })();
 renderCats();
 $("rate").value = rate;
