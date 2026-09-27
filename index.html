@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
 <title>河內十日</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0a7cff" media="(prefers-color-scheme:light)">
-<meta name="theme-color" content="#0b3d91" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#3b5247" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#1f2b25" media="(prefers-color-scheme:dark)">
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,13 +18,13 @@
    separator，重點色 systemBlue，語意色 systemOrange / systemIndigo。
    要加新顏色就從下面這組挑，不要自己調色相。                          */
 :root{
-  --bg:#eef2f8; --card:#ffffff; --card2:#f3f5fa;
+  --bg:#f3f1ea; --card:#ffffff; --card2:#f6f4ee;
   --ink:#000000; --soft:#6c6c70; --faint:#8e8e93; --quiet:#c7c7cc;
   --line:rgba(60,60,67,.20); --fill:rgba(118,118,128,.12);
-  --brand:#0a7cff; --brandBg:rgba(10,124,255,.11);
-  --hero1:#0a7cff; --hero2:#17b3c9; --heroTx:#ffffff;
+  --brand:#3b5247; --brandBg:rgba(59,82,71,.11); --onBrand:#ffffff;
+  --hero1:#3b5247; --hero2:#6b8a74; --heroTx:#ffffff; --glow:rgba(59,82,71,.22);
   --walk:#1f9d55; --walkBg:rgba(31,157,85,.13); --carDot:#ff9500; --outDot:#7c5cff;
-  --shadow:0 1px 3px rgba(23,43,77,.06), 0 4px 14px rgba(23,43,77,.04);
+  --shadow:0 1px 3px rgba(40,52,45,.06), 0 4px 14px rgba(40,52,45,.04);
   --cOrange:#c2610a; --cOrangeBg:rgba(255,149,0,.13);
   --cIndigo:#5856d6; --cIndigoBg:rgba(88,86,214,.12);
   --cGreen:#248a3d; --cPurple:#8944ab; --cTeal:#0a8a84; --cPink:#b03f6a;
@@ -36,11 +36,11 @@
      "PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#0a0d13; --card:#161a22; --card2:#1f2430;
+  --bg:#0d110f; --card:#171d1a; --card2:#202824;
   --ink:#ffffff; --soft:#a1a1a6; --faint:#8e8e93; --quiet:#48484a;
   --line:rgba(84,84,88,.65); --fill:rgba(118,118,128,.24);
-  --brand:#3b95ff; --brandBg:rgba(59,149,255,.20);
-  --hero1:#0b3d91; --hero2:#0e7490; --heroTx:#ffffff;
+  --brand:#c9b892; --brandBg:rgba(201,184,146,.18); --onBrand:#1f2b25;
+  --hero1:#2c3d35; --hero2:#3b5247; --heroTx:#f1e9d6; --glow:rgba(0,0,0,.35);
   --walk:#4ade80; --walkBg:rgba(74,222,128,.18); --carDot:#ffb340; --outDot:#a78bfa;
   --shadow:0 1px 3px rgba(0,0,0,.4);
   --cOrange:#ff9f0a; --cOrangeBg:rgba(255,159,10,.18);
@@ -71,7 +71,7 @@ a{color:var(--brand)}
 .topbar.show{opacity:1;border-bottom-color:var(--line)}
 .topbar span{font-size:17px;font-weight:600;letter-spacing:-.02em}
 .herowrap{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:var(--heroTx);
-  border-radius:0 0 26px 26px;box-shadow:0 8px 24px rgba(10,124,255,.18)}
+  border-radius:0 0 26px 26px;box-shadow:0 8px 24px var(--glow)}
 .hero{padding:calc(env(safe-area-inset-top) + 54px) 20px 20px;max-width:620px;margin:0 auto}
 .hero h1{margin:0;font-size:34px;line-height:1.14;font-weight:700;letter-spacing:-.037em}
 .hero .sub{margin:4px 0 0;font-size:15px;opacity:.85}
@@ -106,7 +106,7 @@ select.ri{padding-right:15px;
 
 .cta{display:block;width:100%;margin:16px 0 0;padding:14px;border:0;border-radius:var(--r2);
   background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;font-size:17px;font-weight:600;
-  cursor:pointer;box-shadow:0 6px 16px rgba(10,124,255,.22)}
+  cursor:pointer;box-shadow:0 6px 16px var(--glow)}
 .cta:active{opacity:.75}
 .cta.ghost{background:var(--card);color:var(--brand);margin-top:10px}
 .cta.ghost.warn{color:var(--cOrange)}
@@ -129,7 +129,7 @@ select.ri{padding-right:15px;
   padding:8px 13px;cursor:pointer;text-align:center;line-height:1.25}
 .dtab b{display:block;font-size:14px;font-weight:600;white-space:nowrap}
 .dtab span{display:block;font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
-.dtab.on{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;box-shadow:0 4px 12px rgba(10,124,255,.25)}
+.dtab.on{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;box-shadow:0 4px 12px var(--glow)}
 .dtab.on span{color:rgba(255,255,255,.82)}
 
 .day .dh{gap:12px;padding:12px 16px}
@@ -276,7 +276,7 @@ select.ri{padding-right:15px;
 
 /* =============================================================== 記帳 */
 .total{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;border-radius:var(--r2);
-  padding:20px 16px 18px;text-align:center;margin-bottom:12px;box-shadow:0 8px 20px rgba(10,124,255,.2)}
+  padding:20px 16px 18px;text-align:center;margin-bottom:12px;box-shadow:0 8px 20px var(--glow)}
 .total .lb{font-size:13px;opacity:.85}
 .total .big{font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-.04em;
   font-variant-numeric:tabular-nums;margin-top:2px}
@@ -324,7 +324,7 @@ select.ri{padding-right:15px;
   color:var(--brand);font-size:15px;font-weight:600;padding:7px 14px;cursor:pointer;
   text-decoration:none;margin-right:8px}
 .tint:active{opacity:.6}
-.tint.on{background:var(--brand);color:#fff}
+.tint.on{background:var(--brand);color:var(--onBrand)}
 .tint.plain{background:transparent;color:var(--faint)}
 label.tint{margin-bottom:6px}
 label.tint input[type=file]{display:none}
@@ -841,10 +841,10 @@ var INFO = [
     { b:"★ 數位入境卡　9/24 16:50 之後才能填", p:"官網 prearrival.immigration.gov.vn，完全免費。2026/6/10 起內排機場強制，免簽旅客也要填。只能在抵達前 72 小時內提交，系統不收更早的申報。建議 9/25–26 填掉，別拖到出門當天。要準備：護照資料、班機 CI793、住宿完整地址、健康自我聲明。入境目的填觀光。填完的 QR Code 記得截圖存相簿，入境時海關要掃。會跟你收費的都是第三方轉賣網站。" },
     { b:"Zalo 和 Grab 先在台灣註冊好", p:"用台灣號碼（+886）註冊登入，Grab 順便把信用卡綁好。你買的 eSIM 越南號碼是回收再利用的，註冊不了任何 App——這是供應商自己寫明的，不是保險起見。" },
     { b:"eSIM 裝好但先關閉那條線", p:"自然日計費，啟用當天就算第 1 天。提早一天啟用會少掉 10/6 一整天，而那天要叫車去胡志明陵、買伴手禮、去機場。9/27 落地之後再打開。台灣門號留著開機、關掉數據漫遊，那是你唯一收得到驗證碼的管道。" },
-    { b:"玉山外幣 ATM 領 400 美金 ＋ 帶 1,500 台幣備用", p:"ATM 匯率 31.91（現金牌告再減 5 分）、免手續費、24 小時不用跑臨櫃，而且吐的是全新百元鈔——越南看鈔票新舊，新鈔不會被扣價。400 美金成本約 12,764 台幣。台幣純粹備用：落地後盾不夠的話，內排 MSB 也收台幣（買入 780），用不到就原封帶回台灣，零損失。台灣不要換越南盾（差 14.5%）。" },
-    { b:"把匯率填成 810", p:"到記帳分頁把匯率改掉（1 台幣 = 810 越南盾）。那是你走美金換匯的實際取得成本，填了記帳才準。" },
+    { b:"✓ 換匯：300 美金 ＋ 台灣換的越南盾 ＋ 2,000 台幣備用", p:"實際：300 美金成本 9,600 台幣（落地約換 784 萬盾）；在台灣用 3,000 台幣換了越南盾（台銀匯率 1 台幣約 709 盾，約 213 萬盾）。兩筆合計約 997 萬盾，現金需求約 1,018 萬，差約 21 萬。另外帶 2,000 台幣備用：盾不夠時內排 MSB 收台幣（買入 780），換 500 台幣（約 39 萬盾）就補得上；用不到就原封帶回台灣，不算花掉。" },
+    { b:"把匯率填成 790", p:"到記帳分頁把匯率改掉（1 台幣 = 790 越南盾）。那是這趟實際換到的平均成本：12,600 台幣（300 美金 9,600＋台灣換的 3,000）換到約 997 萬盾。填了記帳才準。" },
     { b:"還沒訂的", p:"只剩下龍灣一日遊（推薦 KKday 鑽石時代號 NT$1,074，歌劇院 08:30 集合，1 天前可免費取消）。10/6 的行李寄放房東已經答應了，那天可以空手去逛。" },
-    { b:"⚠️ 台新的保險這趟不算數", p:"2026/9/21 確認：Trip Coins 折抵不算「全額刷卡」，所以卡片附贈的旅平險和旅遊不便險這趟都不成立。已經自己買了一張 NT$566 頂上。要確認那張有沒有含「旅遊不便險」（班機延誤、行李延誤／遺失）——原本以為台新有，現在那塊可能是空的。" },
+    { b:"⚠️ 台新的保險這趟不算數", p:"2026/9/21 確認：Trip Coins 折抵不算「全額刷卡」，所以卡片附贈的旅平險和旅遊不便險這趟都不成立。已經自己買了一張 NT$566 頂上，已確認有含「旅遊不便險」（班機延誤、行李延誤／遺失），這塊有保到。" },
     { b:"護照效期", p:"要留 6 個月以上，出發前翻一下確認。馬來西亞護照免簽 30 天，不用辦 e-visa。" }
   ]},
   { h:"天氣與打包", items:[
@@ -877,9 +877,9 @@ var INFO = [
     { b:"機場", p:"市區到內排約 28 km、45–55 分鐘。去程 9/27 已預訂接送（NT$416），報航班 CI793 司機會追蹤班機。回程 10/6 沒訂，直接叫 Grab（35–40 萬盾），白天熟路比預訂划算。" }
   ]},
   { h:"錢與換匯", items:[
-    { b:"★ 在台灣：玉山外幣 ATM 領 400 美金", p:"台銀越南盾現金賣出 0.00141——1 台幣只換到 709 盾，走美金是 819 盾，差 14.5%，在台灣換盾等於先虧一成四。美金用玉山外幣 ATM 最省事：匯率 31.91（現金牌告減 5 分）、免換匯手續費、24 小時不用配合臨櫃營業時間，而且吐全新百元鈔。400 美金成本約 12,764 台幣。面額固定 100 美元，所以只能領 400 或 500。" },
-    { b:"另外帶 1,500 台幣當備用", p:"400 美金換到約 1,045 萬盾，現金需求約 1,018 萬，緩衝只有 27 萬——太薄。所以另外帶 1,500 台幣：真的不夠時，內排 MSB 的牌告上有台幣（買入 780），在機場就換得掉，一樣是持牌銀行。加上去可動用約 1,162 萬盾，緩衝 144 萬。★ 用不到就原封帶回台灣，一毛都沒損失——這是它比多換美金好的地方。" },
-    { b:"★ 落地在內排機場一次換完", p:"2026/9/22 現場牌告：T2 一樓西側的 MSB 外匯櫃台，美金買入 26,130，旁邊那櫃 26,110，兩櫃都寫 NO FEE / NO COMMISSION。這個價錢比 Vietcombank 市區分行的 25,800 還好 1.3%。所以不用跑市區、不用找銀樓，落地換一次就結束。400 美金約換到 1,045 萬盾。" },
+    { b:"★ 在台灣：玉山外幣 ATM 領了 300 美金", p:"台銀越南盾現金賣出 0.00141——1 台幣只換到 709 盾，走美金是 819 盾，差 14.5%，在台灣換盾等於先虧一成四。美金用玉山外幣 ATM 最省事：匯率 31.91（現金牌告減 5 分）、免換匯手續費、24 小時不用配合臨櫃營業時間，而且吐全新百元鈔。實際領了 300 美金，成本 9,600 台幣。另外還是在台灣換了 3,000 台幣的越南盾（約 213 萬盾），已經換了就照用。" },
+    { b:"另外帶 2,000 台幣當備用", p:"300 美金約 784 萬盾＋台灣換的約 213 萬盾＝約 997 萬盾，現金需求約 1,018 萬，差約 21 萬。所以帶 2,000 台幣：真的不夠時，內排 MSB 的牌告上有台幣（買入 780），在機場就換得掉，一樣是持牌銀行。換 500 台幣（約 39 萬盾）就補得上，全換可再多 156 萬。★ 用不到就原封帶回台灣，一毛都沒損失。" },
+    { b:"★ 落地在內排機場一次換完", p:"2026/9/22 現場牌告：T2 一樓西側的 MSB 外匯櫃台，美金買入 26,130，旁邊那櫃 26,110，兩櫃都寫 NO FEE / NO COMMISSION。這個價錢比 Vietcombank 市區分行的 25,800 還好 1.3%。所以不用跑市區、不用找銀樓，落地換一次就結束。300 美金約換到 784 萬盾。" },
     { b:"為什麼不用跑市區銀樓", p:"越南 2026 年 1 月起加強外幣兌換管理、2 月起加重執法，外國旅客一樣適用，無照換匯最高罰 1 億盾、錢可能直接沒收。機場那兩櫃是持牌銀行的分行，完全合法。銀樓匯率沒有比較好（機場已經是最好的），沒有理由去冒那個險。" },
     { b:"機場也收台幣", p:"MSB 的牌告上有台幣，買入 780。換算等於 1 台幣 780 盾，比走美金的 819 差 5%，所以主力還是帶美金。但這代表萬一美金不夠，身上的台幣在機場換得掉，不用另外想辦法。" },
     { b:"換算口訣：去掉三個零，再乘 1.2", p:[
@@ -911,7 +911,7 @@ var INFO = [
       "按摩 60 分　　　30–50 萬　＝　366–610 元"
     ] },
     { b:"別剩太多盾", p:"越南盾換回台幣要 1000 盾才換回 1 台幣，再賠 18%。剩下的在 10/6 花掉最划算：退房後 Chợ Hôm 買咖啡豆和蓮花茶，機場還能再補一輪。" },
-    { b:"這趟的預算", p:"全程約 32,500 台幣。已付 14,960（機票 9,190＋住宿 4,548＋醫療險 566＋eSIM 240＋去程接送 416）。現金：玉山 ATM 領 400 美金約 12,764，另帶 1,500 台幣備用。刷卡約 5,100（下龍灣 1,074＋回程 Grab 400＋在地刷卡約 3,600）。現金需求約 1,018 萬盾，400 美金換到 1,045 萬，加台幣備用共 1,162 萬。" },
+    { b:"這趟的預算", p:"全程約 32,700 台幣，最多約 34,300（市區 Grab 若沒算在在地刷卡裡）。已付 14,960（機票 9,190＋住宿 4,548＋旅平險 566＋eSIM 240＋去程接送 416）。換匯 12,600（300 美金 9,600＋台灣換越南盾 3,000），另帶 2,000 台幣備用，沒用到不算花掉。刷卡約 5,100（下龍灣 1,074＋回程 Grab 400＋在地刷卡約 3,600）。市區 Grab 行程排了 16 趟，一趟 6–12 萬盾，合計約 128 萬盾＝約 1,600 台幣。現金需求約 1,018 萬盾，手上約 997 萬，差約 21 萬用備用台幣補。" },
     { b:"刷卡挑哪張", p:"日常消費挑海外手續費低、回饋高的那張。旅平險只看機票是用哪張刷的，其他消費換別張卡不影響——不過這趟台新那張本來就不算數（見預訂分頁）。" }
   ]},
   { h:"緊急", items:[
@@ -1024,18 +1024,17 @@ var BOOKINGS = [
       "下次訂機票記得：要用信用卡附贈的保險，就不要用任何點數或回饋折抵，全額刷下去"
     ],
     f:[["ref","哪張卡 + 後四碼"],["tel","台新客服"]] },
-  { id:"insgap", b:"旅平險　自己買的 NT$566（這趟唯一有效的）", lines:[
+  { id:"insgap", b:"旅平險　自己買的 NT$566（含旅遊不便險）", lines:[
       "★ 台新那張不算數（見上一張卡），所以這趟你身上只有這一份保險",
       "保單號碼和 24 小時專線填在下面——真的出事的時候才找得到，別只存在 email 裡",
-      "★ 確認一下這張有沒有含「旅遊不便險」：班機延誤、行李延誤、行李遺失。",
-      "　 566 這個價位通常是意外＋醫療，不便險不一定在裡面。原本以為台新有，現在沒了",
+      "✓ 已確認這張有含「旅遊不便險」：班機延誤、行李延誤、行李遺失都有保到",
       "這趟不是公司出差，也沒有公司團體險可以靠，就是這張",
       "就醫記得拿「診斷證明書」和「收據正本」，英文版最好，出院前一次拿齊",
       "法越醫院 Hôpital Français de Hanoï、Vinmec 都有國際醫療，品質不錯但不便宜"
     ], f:[["ref","保單號碼"],["tel","24 小時理賠專線"],["url","電子保單／理賠說明連結"]] },
   { id:"insclaim", b:"真的出事，現場要拿到的東西", lines:[
-      "★ 下面的延誤和行李那兩條，要你自己買的那張有含不便險才賠得到。",
-      "　 但證明文件不管有沒有保都先拿——事後補不回來，拿了也不虧",
+      "★ 下面的延誤和行李那兩條，你自己買的那張有含不便險，賠得到。",
+      "　 證明文件一定要現場拿——事後補不回來",
       "班機延誤：要延誤 4 小時以上才賠。跟航空公司櫃台要「延誤證明」，",
       "　 上面要有原因和時間。離開機場就很難補開了",
       "行李延誤：延誤 6 小時以上才賠。在機場行李櫃台辦 PIR（行李事故報告），",
@@ -1115,8 +1114,32 @@ function load(k, d) {
 function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
 
 var expenses = load("hn-exp", []);
+
+/* 出發前就付掉的錢，第一次打開自動補進記帳（每筆固定 id，刪掉不會再長回來）。
+   合計 14,960，跟「資訊 → 這趟的預算」那段對得上。
+   換的美金和越南盾是換匯不是花費，不列；Trip Coins 折抵 980 沒花現金，也不列。 */
+(function seedPrepaid() {
+  var PRE = [
+    { id:"pre-flight", a:9190, k:"交通", t:"機票 CI793 來回（刷卡部分）" },
+    { id:"pre-stay",   a:4548, k:"住宿", t:"住宿 9/27–10/6" },
+    { id:"pre-ins",    a:566,  k:"其他", t:"旅平險（含不便險）" },
+    { id:"pre-esim",   a:240,  k:"其他", t:"eSIM" },
+    { id:"pre-car",    a:416,  k:"交通", t:"去程機場接送 9/27" }
+  ];
+  var seeded = load("hn-seed-pre", []);
+  var added = 0;
+  PRE.forEach(function (x) {
+    if (seeded.indexOf(x.id) >= 0) { return; }
+    seeded.push(x.id);
+    if (expenses.some(function (e) { return e.id === x.id; })) { return; }
+    expenses.push({ id:x.id, a:x.a, c:"TWD", k:x.k, d:"出發前", t:x.t, pm:"card" });
+    added++;
+  });
+  save("hn-seed-pre", seeded);
+  if (added) { save("hn-exp", expenses); }
+})();
 var done     = load("hn-done", {});
-var rate     = load("hn-rate", 810);
+var rate     = load("hn-rate", 790);
 var book     = load("hn-book", {});
 var wx       = load("hn-wx", null);
 var food     = load("hn-food", {});    /* 餐廳想吃／吃過的標記 */
