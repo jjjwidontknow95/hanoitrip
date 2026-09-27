@@ -550,21 +550,26 @@ nav button.on .fillc{fill:currentColor;fill-opacity:.17}
      p 對應方位圖上的地點 id（見 MAPPTS）                               */
 
 var DAYS = [
-  { n:1, d:"9/27", w:"週日", k:"free", lb:"抵達", nt:"19:00 到住處", ev:[
+  { n:1, d:"9/27", w:"週日", k:"free", lb:"抵達", nt:"19:00 到住處，晚上生啤街", ev:[
     { t:"16:50", x:"內排機場 T2 落地", s:"入境＋行李約 1 小時", p:"airport", g:"Noi Bai International Airport Terminal 2 Hanoi" },
     { t:"18:05", x:"機場接送進市區", s:"約 28 km，45–55 分鐘。入住是下午 2 點後，密碼鑰匙盒自助進門", m:["van","接送 45–55 分"], p:"home", g:"@home" },
-    { t:"19:30", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" }
+    { t:"20:00", x:"晚餐 Phở Tiến", m:["car","Grab"], g:"Pho Tien Hanoi" },
+    { t:"20:30", x:"回住處休息", s:"休息到 21:30", m:["car","Grab"], p:"home", g:"@home" },
+    { t:"21:30", x:"Tạ Hiện 生啤街", s:"週日晚上步行街和週末夜市也有開", m:["car","Grab"], p:"oldq", g:"Ta Hien Street Hanoi" },
+    { t:"23:00", x:"回住處", m:["car","Grab"], p:"home", g:"@home" }
   ]},
   { n:2, d:"9/28", w:"週一", k:"free", lb:"教師節", nt:"週一皇城和民族學博物館休館，皇城改排 10/3（週六）", ev:[
-    { t:"08:30", x:"巴亭廣場", s:"陵寢外觀、主席府、一柱廟，全戶外。昇龍皇城週一休館，改排 10/3", z:"c", m:["car","Grab"], p:"badinh", g:"Ba Dinh Square Hanoi" },
-    { t:"10:00", x:"文廟", s:"週一有開，7:30–18:00，門票 3 萬盾。離巴亭只有 850 公尺", m:["walk","走 12 分"], p:"temple", g:"Temple of Literature Hanoi" },
-    { t:"11:20", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
-    { t:"13:00", x:"Chợ Hôm 一帶午餐", m:["car","Grab 回市區"], p:"chohom", g:"Cho Hom market Hanoi" },
-    { t:"14:00", x:"火爐監獄", s:"週一有開，8:00–17:00，門票 3–5 萬盾", m:["walk","走得到"], g:"Hoa Lo Prison Hanoi" },
-    { t:"15:15", x:"婦女博物館", s:"就在附近走得到，17:00 關門", m:["walk","走 5 分"], g:"Vietnamese Women's Museum Hanoi" },
-    { t:"16:30", x:"Grab 往西湖", s:"提早出發，才有時間走 Phan Dinh Phung 林蔭道", m:["car","Grab 15 分"], p:"westlake", g:"Phan Dinh Phung Street Hanoi" },
-    { t:"17:00", x:"鎮國寺 ＋ 西湖日落", s:"日落 17:35", z:"c", p:"westlake", g:"Tran Quoc Pagoda Hanoi" },
-    { t:"19:00", x:"晚餐", m:["car","Grab 回市區"], p:"home", g:"@home" }
+    { t:"10:30", x:"巴亭廣場", s:"陵寢外觀、一柱寺，拍照 20–30 分，免費。胡志明陵週一不開放進去", z:"c", m:["car","Grab 15 分"], p:"badinh", g:"Ba Dinh Square Hanoi" },
+    { t:"11:00", x:"文廟", s:"門票 3 萬盾，拍照 30 分。11:35 一定要叫車，不然趕不上按摩", m:["walk","走 12 分"], p:"temple", g:"Temple of Literature Hanoi" },
+    { t:"12:00", x:"Tokyo Massage 2（90 分）", s:"按到 13:30", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
+    { t:"14:00", x:"午餐 Banh Mi 25", s:"25 Hàng Cá。說 không rau（不要菜）。座位難搶，多半外帶", m:["car","Grab 回市區 25 分"], p:"oldq", g:"Banh Mi 25 Hang Ca Hanoi" },
+    { t:"14:45", x:"火爐監獄", s:"8:00–17:00，門票 3–5 萬盾，看 1 小時。附近的館使寺可以順路進去 10 分鐘", m:["car","Grab 5 分"], g:"Hoa Lo Prison Hanoi" },
+    { t:"16:00", x:"婦女博物館", s:"17:00 關門。不想看就跳過，附近找咖啡店坐", m:["walk","走 5 分"], g:"Vietnamese Women's Museum Hanoi" },
+    { t:"16:30", x:"Grab 往西湖", s:"提早出發，才有時間走 Phan Dinh Phung 林蔭道（北門教堂在這條路上）", m:["car","Grab 15 分"], p:"westlake", g:"Phan Dinh Phung Street Hanoi" },
+    { t:"17:00", x:"真武觀 → 鎮國寺 ＋ 西湖日落", s:"真武觀在路上，停 10 分鐘。日落 17:35", z:"c", p:"westlake", g:"Tran Quoc Pagoda Hanoi" },
+    { t:"18:15", x:"晚餐 Lẩu Nướng Corner Z", s:"342 Xã Đàn。點烤肉那份菜單，純肉", m:["car","Grab 20 分"], g:"Lau Nuong Corner Z 342 Xa Dan Hanoi" },
+    { t:"19:30", x:"回住處拿電腦", m:["car","Grab"], p:"home", g:"@home" },
+    { t:"20:00", x:"咖啡廳打電腦", s:"Xofa（14 Tống Duy Tân，號稱 24 小時，出門前查一下）或附近 Highlands／Cộng，通常開到 22:30–23:00", m:["car","Grab 10 分"], g:"Xofa Cafe 14 Tong Duy Tan Hanoi" }
   ]},
   { n:3, d:"9/29", w:"週二", k:"work", lb:"上班", nt:"", ev:[
     { t:"09:00", x:"辦公室 Vietbank", s:"走路 11 分", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi" },
