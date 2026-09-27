@@ -608,7 +608,7 @@ var DAYS = [
   { n:9, d:"10/5", w:"週一", k:"free", lb:"請假", nt:"下龍灣的備用日。前一晚 21:30 才回來，晨拍累就跳過", ev:[
     { t:"06:30", x:"還劍湖晨拍龜塔", s:"可選。人少光軟，長焦壓縮。前一晚下龍灣太晚回就補眠", m:["walk","走 20 分"], p:"hoankiem", g:"Turtle Tower Hoan Kiem Lake Hanoi" },
     { t:"08:00", x:"聖若瑟大教堂", s:"接 Phở 10 Lý Quốc Sư 早餐", m:["walk","走得到"], p:"cathedral", g:"St Joseph Cathedral Hanoi" },
-    { t:"09:30", x:"36 古街、同春市場", s:"伴手禮主力：Hàng Đường 蜜餞街、Star Kitchen、Hàng Gai 絲綢。10:45 前回住處放東西", m:["walk","走得到"], p:"oldq", g:"Dong Xuan Market Hanoi" },
+    { t:"09:30", x:"36 古街、同春市場", s:"順路進白馬寺（76 Hàng Buồm，古街最老的廟，10 分鐘）。伴手禮主力：Hàng Đường 蜜餞街、Star Kitchen、Hàng Gai 絲綢。10:45 前回住處放東西", m:["walk","走得到"], p:"oldq", g:"Dong Xuan Market Hanoi" },
     { t:"11:20", x:"Cầu Giấy", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
     { t:"13:00", x:"回市區午餐 → 回住處休息", s:"前一晚下龍灣 21:30 才到，這段留白補眠。火爐監獄和婦女博物館改排 9/28", m:["car","Grab 20 分"], p:"chohom", g:"Cho Hom market Hanoi" },
     { t:"15:15", x:"火車街（白天）", s:"15:30 那班有光", m:["walk","走得到"], p:"train", g:"Hanoi Train Street Le Duan" },
@@ -684,6 +684,10 @@ var VTAG = { ok:"不吃菜也 OK", ask:"點的時候說不要菜", skip:"菜是�
 
 var FOOD = [
   { h:"上班日午餐（辦公室 Vietbank 走得到）", items:[
+    { id:"bunthang", la:21.0243, lo:105.8455, b:"Bún thang bà Nhung", v:"bún thang（雞絲蛋皮米線）", a:"11 Hạ Hồi, Cửa Nam",
+      r:"你收藏的", k:"ask",
+      d:"河內老派米線：雞絲、蛋皮、肉鬆配清湯。會撒蔥和香草，點的時候說 không hành、không rau。離辦公室近，上班日午餐剛好。",
+      g:"Bun thang ba Nhung 11 Ha Hoi Hanoi" },
     { id:"quanannon", la:21.02626, lo:105.8433, b:"Quán Ăn Ngon", v:"越南菜大集合", a:"18 Phan Bội Châu, Cửa Nam",
       r:"4.4（6,002 則）· 06:30 開", k:"ask",
       d:"離辦公室最近的正經餐廳，菜單很長、環境好，帶同事或自己來都行。網友說飯點 walk-in 要排 30–40 分。",
@@ -716,9 +720,17 @@ var FOOD = [
       g:"Cho Hom market Hanoi" }
   ]},
   { h:"老城區・還劍湖（走 20–25 分）", items:[
+    { id:"autrieu", la:21.029, lo:105.849, b:"Phở Bò Ấu Triệu", v:"phở bò", a:"34 Ấu Triệu（大教堂旁）",
+      r:"必比登", k:"ask",
+      d:"菜單只有牛肉河粉一道，店名只印在員工制服上。就在大教堂旁邊，10/5 早上看完教堂可以取代 Phở 10。湯裡有蔥，記得說 không hành。",
+      g:"Pho Bo Au Trieu 34 Au Trieu Hanoi" },
+    { id:"donduck", la:21.0349, lo:105.8458, b:"Don Duck Old Quarter", v:"鴨料理（烤鴨・鴨排）", a:"29 Bát Đàn",
+      r:"曾入選必比登（2025 起不在名單）", k:"ok",
+      d:"鴨子專門店：北京式烤鴨、鴨排、桌邊烤鴨，整盤都是肉，最適合你。哪天晚上想吃好一點就來。",
+      g:"Don Duck Old Quarter 29 Bat Dan Hanoi" },
     { id:"phoganguyet", la:21.02837, lo:105.847, b:"Phở Gà Nguyệt", v:"phở gà trộn（乾拌雞肉河粉）", a:"5B Phủ Doãn",
-      r:"4.4（3,489 則）· 約 06:30–24:00", k:"ok",
-      d:"米其林推薦。點乾麵會附一碗雞湯，評論裡很多人點「一乾一湯」。熱門時段容易提早賣完，想吃各部位要早點去。乾麵基本上就是肉加麵，最適合你。",
+      r:"4.4（3,489 則）· 06:30–13:00、16:30 後再開", k:"ok",
+      d:"米其林推薦。點乾麵會附一碗雞湯，評論裡很多人點「一乾一湯」。⚠️ 13:00 到 16:30 中午休息，別下午去撲空。熱門時段容易提早賣完，想吃各部位要早點去。乾麵基本上就是肉加麵，最適合你。",
       g:"Pho Ga Nguyet 5B Phu Doan Hanoi" },
     { id:"xoiyen", la:21.03299, lo:105.85446, b:"Xôi Yến", v:"xôi xéo（薑黃糯米飯）", a:"35B Nguyễn Hữu Huân",
       r:"4.0（4,570 則）· 開到 00:00", k:"ok",
@@ -760,6 +772,10 @@ var FOOD = [
       g:"Quan Oc Di Tu 144C Quan Thanh Hanoi" }
   ]},
   { h:"正餐・烤肉（不想吃越南菜的時候）", items:[
+    { id:"beaulieu", la:21.0257, lo:105.8558, b:"Le Beaulieu", v:"法式料理", a:"Sofitel Legend Metropole, 15 Ngô Quyền",
+      r:"米其林入選", k:"ok",
+      d:"百年老飯店 Metropole 裡的法式餐廳，肉為主。想犒賞自己的一餐，要先訂位，別穿拖鞋短褲。從歌劇院走過去很近。",
+      g:"Le Beaulieu Sofitel Legend Metropole Hanoi" },
     { id:"cornerz", la:21.01538, lo:105.82987, b:"Lẩu Nướng Corner Z", v:"越式火鍋・奶油烤肉", a:"342 Xã Đàn（二號店）",
       r:"4.9（2,694 則）· 開到 00:00", k:"ok",
       d:"4.9 分，兩份菜單分火鍋和烤肉。只開晚上。點烤肉就是純肉，最符合你的需求。老店在 36 Phùng Hưng。",
@@ -774,6 +790,14 @@ var FOOD = [
       g:"Tam Vi 4B Yen The Hanoi" }
   ]},
   { h:"咖啡・甜點", items:[
+    { id:"phoco", la:21.0327, lo:105.8513, b:"Cafe Phố Cổ", v:"老宅咖啡・湖景頂樓", a:"11 Hàng Gai",
+      r:"別人私藏", k:"ok",
+      d:"要穿過一間店面、走進天井再爬樓梯，頂樓俯瞰整個還劍湖，拍照最推薦。逛湖或古街時順路上去。",
+      g:"Cafe Pho Co 11 Hang Gai Hanoi" },
+    { id:"allbeans", la:21.0213, lo:105.8515, b:"All Beans Coffee Roasters", v:"精品咖啡", a:"47 Hàm Long",
+      r:"你收藏的・營業時間沒查到", k:"ok",
+      d:"自家烘豆的精品咖啡，住處和辦公室都走得到。想晚上來打電腦的話，先看 Google Maps 開到幾點。",
+      g:"All Beans Coffee Roasters 47 Ham Long Hanoi" },
     { id:"giang", la:21.03427, lo:105.8545, b:"Café Giảng", v:"cà phê trứng（蛋咖啡）", a:"39 Nguyễn Hữu Huân",
       r:"4.4（16,987 則）· 07:00–22:30", k:"ok",
       d:"蛋咖啡創始店，1946 年的窄巷老店，往裡面走才是店面。怕膩的話兩個人分一杯。",
@@ -869,6 +893,7 @@ var INFO = [
     { b:"Top of Hanoi", p:"67 樓，每天 17:00–24:00。不用門票，點一杯就進得去。露天無玻璃牆，帶薄外套。" }
   ]},
   { h:"現場提醒", items:[
+    { b:"按摩的備案：Nhà Spa", p:"你收藏的連鎖 spa（FB：homeofspa，官網 nhaspa.com.vn），河內三家店：老城區 75 Hàng Mã、19 Cửa Đông，西邊 Hongkong Tower（Huỳnh Thúc Kháng）。有草本洗頭和肩頸按摩，Tokyo Massage 約不到時的備案，先在官網或 FB 預約。" },
     { b:"火車街", p:"走 Lê Duẩn 段（Khâm Thiên 附近），那段沒人看守。Trần Phú 段有警衛，要跟咖啡店老闆才進得去。一天 4–6 班，時刻不準，到現場先問店家。" },
     { b:"下龍灣", p:"颱風封港會直接取消。訂可免費取消的，出發前兩天看 Windy。真的取消就改寧平，車程只要 2 小時、不受海況影響。" },
     { b:"過馬路", p:"機車不會停。用穩定的速度慢慢走過去讓他們繞開你，千萬不要突然停住或往回跑。跟著當地人一起過最安全。" },
