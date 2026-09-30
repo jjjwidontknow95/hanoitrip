@@ -592,7 +592,7 @@ var DAYS = [
     { t:"21:45", x:"Top of Hanoi 67F", s:"同棟搭電梯上去。Lotte Center 67 樓露天，開到 24:00，不用門票，一杯約 25 萬盾，付現金。帶薄外套。☔ 下雨備案：同棟 65 樓室內觀景台或樓下咖啡廳；或改去還劍湖 Majesty Sky Bar", z:"c", m:["car","Grab 15–20 分"], p:"lotte", g:"Top of Hanoi Lotte Center Hanoi" },
     { t:"23:00", x:"Grab 回家", s:"約 20 分", m:["car","Grab"], p:"home", g:"@home" }
   ]},
-  { n:6, d:"10/2", w:"週五", k:"work", lb:"上班", nt:"18:30 下班 → Vincom 買衣服 → Phở Gà Nguyệt → 步行街夜市 → Northern Soul（週末啤酒街封街最熱鬧）。☔ 降雨機率 65%，帶輕便雨衣", ev:[
+  { n:6, d:"10/2", w:"週五", k:"work", lb:"上班", nt:"18:30 下班 → Vincom 買衣服 → Phở Gà Nguyệt → 步行街夜市 → Northern Soul（週末啤酒街封街最熱鬧）→ 宵夜炒河粉。☔ 降雨機率 65%，帶輕便雨衣", ev:[
     { t:"08:00", x:"（可選）上班前咖啡 Chờ một người kafe", s:"31 Đồng Nhân，住處附近。或 The Running Bean（13 Ngô Thì Nhậm）、rand moroc and coffee（7 Phan Huy Chú，3 樓有立體冰箱貼）", m:["walk","走得到"], p:"food:chomotnguoi", g:"Cho mot nguoi kafe 31 Dong Nhan Hanoi" },
     { t:"09:00", x:"辦公室 Vietbank", s:"18:30 下班", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi" },
     { t:"中午", x:"午餐 Phở Thìn 13 Lò Đúc", s:"牛肉先爆炒再下湯的河粉（phở tái lăn）。蔥很多，一定說 không hành。約 6–8 萬盾，現金", m:["walk","走得到"], p:"food:phothin", g:"Pho Thin 13 Lo Duc Hanoi" },
@@ -600,6 +600,7 @@ var DAYS = [
     { t:"19:30", x:"晚餐 Phở Gà Nguyệt", s:"5B Phủ Doãn，乾拌雞肉河粉，整碗沒菜，約 6–8 萬盾", m:["car","Grab 10 分"], p:"food:phoganguyet", g:"Pho Ga Nguyet 5B Phu Doan Hanoi" },
     { t:"20:15", x:"還劍湖步行街＋Hàng Đào 夜市", s:"☔ 帶輕便雨衣。步行街週五～週日封街到午夜，夜市 18:00–23:00，伴手禮在這挑", m:["walk","走 5 分"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" },
     { t:"21:30", x:"Northern Soul Rooftop Bar", s:"31 Tạ Hiện，頂樓陽台看啤酒街路口，週末封街最熱鬧，一杯約 5–15 萬盾", m:["walk","走得到"], p:"oldq", g:"Northern Soul Rooftop Bar 31 Ta Hien Hanoi" },
+    { t:"22:30", x:"宵夜 Phở xào Bà Thanh Béo", s:"11 Hàng Buồm，炒牛腱河粉 4.5–5.5 萬盾，付現金。從 Northern Soul 走 2 分，開到 03:30。說 không rau, không hành", m:["walk","走 2 分"], p:"food:phoxao", g:"Pho xao Ba Thanh Beo 11 Hang Buom Hanoi" },
     { t:"（可選）", x:"Café Giảng 蛋可可", s:"39 Nguyễn Hữu Huân，開到 22:30。蛋可可沒咖啡因、比蛋咖啡甜，可說 ít đường（少糖）", m:["walk","走得到"], p:"food:giang", g:"Cafe Giang 39 Nguyen Huu Huan Hanoi" }
   ]},
   { n:7, d:"10/3", w:"週六", k:"free", lb:"西邊・竹帛湖・西湖", nt:"主題：吃＋咖啡＋文青小店，路線由西往東。Tokyo Massage 2 11:00 才開（週六或週一擇一），Nhà Spa 排另一天。民族學博物館和昇龍皇城只有今天進得去", ev:[
@@ -769,6 +770,10 @@ var FOOD = [
       g:"Cho Hom market Hanoi" }
   ]},
   { h:"老城區・還劍湖（走 20–25 分）", items:[
+    { id:"phoxao", la:21.0352, lo:105.8522, b:"Phở xào Bà Thanh Béo", v:"炒河粉（phở xào bắp bò）", a:"11 Hàng Buồm",
+      r:"18:00–03:30 · 4.5–5.5 萬盾", k:"ask",
+      d:"20 多年老店，招牌炒牛腱河粉。會放一點青菜和蔥，點的時候說 không rau, không hành。就在 Tạ Hiện 啤酒街旁邊，開到半夜，喝完酒吃剛好。另有中午分店 6 Lương Ngọc Quyến（10:00–13:00）。電話 0926 998 883",
+      g:"Pho xao Ba Thanh Beo 11 Hang Buom Hanoi" },
     { id:"madamehien", la:21.0292, lo:105.8485, b:"Madame Hiền", v:"越南菜餐廳", a:"大教堂附近（地址 Google 搜）",
       r:"偏貴", k:"ask",
       d:"馬克宏和蘋果 CEO 庫克吃過的餐廳，想吃好一點的一餐再來，點菜說 không rau。",
