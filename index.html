@@ -592,28 +592,31 @@ var DAYS = [
     { t:"21:45", x:"Top of Hanoi 67F", s:"同棟搭電梯上去。Lotte Center 67 樓露天，開到 24:00，不用門票，一杯約 25 萬盾，付現金。帶薄外套。☔ 下雨備案：同棟 65 樓室內觀景台或樓下咖啡廳；或改去還劍湖 Majesty Sky Bar", z:"c", m:["car","Grab 15–20 分"], p:"lotte", g:"Top of Hanoi Lotte Center Hanoi" },
     { t:"23:00", x:"Grab 回家", s:"約 20 分", m:["car","Grab"], p:"home", g:"@home" }
   ]},
-  { n:6, d:"10/2", w:"週五", k:"work", lb:"上班", nt:"16:30 下班 → 回家等禮物 → 大教堂一帶文青小店 → 炒河粉 → 夜市 → 蛋咖啡 → 糯米飯第二餐 → 路口酒吧。☔ 降雨機率 65%，帶輕便雨衣", ev:[
-    { t:"08:00", x:"（可選）上班前咖啡 Chờ một người kafe", s:"31 Đồng Nhân，住處附近。或 The Running Bean（13 Ngô Thì Nhậm）、rand moroc and coffee（7 Phan Huy Chú，3 樓有立體冰箱貼）", m:["walk","走得到"], p:"food:chomotnguoi", g:"Cho mot nguoi kafe 31 Dong Nhan Hanoi" },
-    { t:"09:00", x:"辦公室 Vietbank", s:"16:30 下班", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi" },
-    { t:"中午", x:"午餐 Phở Thìn 13 Lò Đúc", s:"牛肉先爆炒再下湯的河粉（phở tái lăn）。蔥很多，一定說 không hành。約 6–8 萬盾，現金", m:["walk","走得到"], p:"food:phothin", g:"Pho Thin 13 Lo Duc Hanoi" },
-    { t:"16:30", x:"回住處放電腦、等組員送禮物", s:"禮物 17:45 送到住處，收好放家裡再出門。換錢改到明天 10/3 早上 08:00 Quốc Trinh", m:["walk","走 11 分"], p:"home", g:"@home", done:1 },
-    { t:"18:00", x:"大教堂一帶文青小店", s:"從住處 Grab 約 10 分。Collective Memory（12 Nhà Chung）→ Carpe Diem 香氛＆紀念品（48 Ấu Triệu）→ Hàng Trống 一條街：Tân Mỹ Embroidery 刺繡（16 號）、DUONG Jewelry（48 號）、Maison Bagian 香氛（52 號）、Chie 少數民族服飾（66 號，男生可試穿）、Nagu 斗笠小熊（78 號）。有空再繞 Chu Choah（02 ngõ Hội Vũ）。小店多半晚上 8–9 點關。CULCAT 不在這區，在啤酒街旁的 9C Đinh Liệt，晚上去酒吧時順路看", m:["walk","走 5 分"], p:"food:collective", g:"Collective Memory 12 Nha Chung Hanoi" },
-    { t:"19:00", x:"晚餐 Phở xào Bà Thanh Béo（炒河粉）", s:"11 Hàng Buồm，炒牛腱河粉 4.5–5.5 萬盾，付現金。說 không rau, không hành。從 Hàng Trống 走約 10 分", m:["walk","走 10 分"], p:"food:phoxao", g:"Pho xao Ba Thanh Beo 11 Hang Buom Hanoi" },
-    { t:"19:30", x:"還劍湖步行街＋Hàng Đào 夜市", s:"☔ 帶輕便雨衣。步行街週五～週日封街到午夜，夜市 18:00–23:00，伴手禮在這挑。想買衣服：湖邊的 UNIQLO Hoàn Kiếm（白色法式建築）順路進去，Vincom 改天", m:["walk","走 5 分"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" },
-    { t:"20:30", x:"蛋咖啡 Café Giảng", s:"39 Nguyễn Hữu Huân，蛋咖啡創始店，22:30 關門要在這之前到。一杯約 3–4 萬盾，付現金。週一 07:00 還會再來一次，今晚想喝別的也可以點蛋可可（沒咖啡因）", m:["walk","走得到"], p:"food:giang", g:"Cafe Giang 39 Nguyen Huu Huan Hanoi" },
-    { t:"21:00", x:"第二餐 Xôi Yến 糯米飯", s:"35B Nguyễn Hữu Huân，就在 Café Giảng 隔壁，開到 00:00。薑黃糯米飯加肉鬆、滷蛋或叉燒，約 5–8 萬盾，付現金，整碗沒菜。想換口味：夜市路邊的烤肉串（thịt xiên nướng）一串 1–2 萬，邊走邊吃", m:["walk","走 1 分"], p:"food:xoiyen", g:"Xoi Yen 35B Nguyen Huu Huan Hanoi" },
-    { t:"21:45", x:"Northern Soul Rooftop Bar（路口酒吧）", s:"31 Tạ Hiện，頂樓陽台看啤酒街路口，週末封街最熱鬧，開到 24:00，一杯約 5–15 萬盾，付現金", m:["walk","走 8 分"], p:"oldq", g:"Northern Soul Rooftop Bar 31 Ta Hien Hanoi" }
+  { n:6, d:"10/2", w:"週五", k:"work", lb:"上班", nt:"已完成。白天上班，傍晚收組員送的禮物。晚上：炒河粉 → 蛋咖啡 → 大教堂一帶小店 → 夜市 → The Balcony Beer。當天花 NT$790（交通 144、餐飲 431、洗衣 177、購物 38）。沒去：DUONG Jewelry、Chie（21:00 關）、Northern Soul、還劍湖散步；錢沒換到", ev:[
+    { t:"09:00", x:"上班 Vietbank", s:"16:30 下班", z:"f", m:["walk","走 11 分"], p:"office", g:"Vietbank office building Ba Trieu Hanoi", done:1 },
+    { t:"中午", x:"午餐 KFC", s:"NT$127", m:["walk","走得到"], p:"office", g:"KFC Hanoi", done:1 },
+    { t:"16:30", x:"回住處收組員送的禮物", s:"", m:["walk","走 11 分"], p:"home", g:"@home", done:1 },
+    { t:"19:45", x:"晚餐 Phở xào Bà Thanh Béo（炒河粉）", s:"11 Hàng Buồm，炒牛腱河粉，NT$101", m:["car","Grab"], p:"food:phoxao", g:"Pho xao Ba Thanh Beo 11 Hang Buom Hanoi", done:1 },
+    { t:"20:20", x:"蛋咖啡 Café Giảng", s:"39 Nguyễn Hữu Huân，NT$55", m:["walk","走得到"], p:"food:giang", g:"Cafe Giang 39 Nguyen Huu Huan Hanoi", done:1 },
+    { t:"20:45", x:"Chu Choah", s:"02 ngõ Hội Vũ。從 Café Giảng 搭 Grab 20 台幣過來。買了 3 萬盾伴手禮（NT$38）；小板凳加啤酒的 magnet 列進想買清單", m:["car","Grab"], p:"food:chuchoah", g:"Chu Choah 02 ngo Hoi Vu Hanoi", done:1 },
+    { t:"20:55", x:"Carpe Diem", s:"48 Ấu Triệu", m:["walk","走得到"], p:"food:carpediem", g:"Carpe Diem 48 Au Trieu Hanoi", done:1 },
+    { t:"21:07", x:"CULCAT（大教堂附近的小店）", s:"", m:["walk","走得到"], p:"cathedral", g:"CULCAT Hanoi", done:1 },
+    { t:"21:20", x:"Gói Gém → Tired City → Maison Bagian → Crabit Studio", s:"Gói Gém（74 Hàng Nón）、Tired City（97 Hàng Gai）、Maison Bagian（102 Hàng Trống）、Crabit Studio（79 Hàng Đào），逛到 21:40", m:["walk","走得到"], p:"food:goigem", g:"Goi Gem Cafe 74 Hang Non Hanoi", done:1 },
+    { t:"21:45", x:"Hàng Đào 夜市", s:"", m:["walk","走得到"], p:"oldq", g:"Hang Dao night market Hanoi", done:1 },
+    { t:"22:00", x:"Biscute", s:"", m:["walk","走得到"], p:"oldq", g:"Biscute Hanoi", done:1 },
+    { t:"22:15", x:"CULCAT（9C Đinh Liệt）", s:"", m:["walk","走得到"], p:"food:culcat", g:"CULCAT 9C Dinh Liet Hanoi", done:1 },
+    { t:"22:30", x:"The Balcony Beer", s:"7 Đinh Liệt，二樓陽台酒吧，NT$148（原本排的 Northern Soul 改來這）", m:["walk","走得到"], p:"oldq", g:"The Balcony Beer 7 Dinh Liet Hanoi", done:1 },
+    { t:"之後", x:"Grab 回住處", s:"住處停電，半夜換了另一間民宿", m:["car","Grab"], p:"home", g:"@home", done:1 }
   ]},
-  { n:7, d:"10/3", w:"週六", k:"free", lb:"西邊・竹帛湖・西湖", nt:"主題：吃＋咖啡＋文青小店，10:00 才出門，22:00 前到家。路線由西往東。晚上按 Nhà Spa（Tokyo 改週一）。民族學博物館和昇龍皇城只有今天進得去", ev:[
-    { t:"10:00", x:"換錢 Quốc Trinh（27–29 Hà Trung）", s:"從住處 Grab 約 15 分。08:00–18:00，週六有開（週日休）。換 1,200 台幣（收台幣，評論匯率約 1:803，約 96 萬盾），櫃台前點清楚。換完 Grab 約 20 分到民族學博物館", m:["car","Grab"], g:"Quoc Trinh 27 Ha Trung Hanoi" },
-    { t:"10:30", x:"越南民族學博物館", s:"8:30 開門，門票 4 萬盾，拍照 1 小時。在 Cầu Giấy，跟 Tokyo Massage 2 同一區", z:"w", m:["car","Grab 20 分"], p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi" },
-    { t:"11:45", x:"西湖邊喝咖啡", s:"Tokyo Massage 改週一。博物館拍完 Grab 過來，坐 1 小時：May Kitchenware Cafe（152 Yên Hoa，院子＋陶罐）或 Con tàu ngầm（14 ngõ 5 Từ Hoa，只收現金）", z:"w", m:["car","Grab 10 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
-    { t:"13:00", x:"午餐 Phở Gà Tình → 真武觀", s:"42 Quán Thánh，開到晚上，13:00 剛好避開午餐人潮。雞肉乾拌河粉（整碗沒菜）。隔壁就是 9/28 漏掉的真武觀", m:["car","Grab 20 分"], p:"food:phogatinh", g:"Pho Ga Tinh 42 Quan Thanh Hanoi" },
-    { t:"13:45", x:"竹帛湖文青一圈", s:"Bookworm 二手書店（44 Phạm Hồng Thái，到 19:00）→ hanoi shouten 文創（51A Nguyễn Khắc Hiếu）→ 咖啡 Everbloom（30 Châu Long）。都走得到", m:["walk","走得到"], p:"food:bookworm", g:"Bookworm Hanoi 44 Pham Hong Thai" },
-    { t:"15:30", x:"City Owls → 昇龍皇城 → 旗塔", s:"皇城 17:00 關，最晚 16:00 要進場。27 Phan Đình Phùng 小店（冰箱貼、插畫明信片）順路，再去皇城（到 17:00、門票 7 萬，全程只有今天進得去），旗塔在隔壁", z:"c", m:["car","Grab 10 分"], p:"badinh", g:"Imperial Citadel of Thang Long Hanoi" },
-    { t:"17:00", x:"MAY KITCHENWARE 本店 → 西湖日落", s:"80 Yên Phụ，陶瓷餐具，價格合理，也能喝咖啡。旁邊就是西湖，17:45 日落", m:["car","Grab 10 分"], p:"food:mayshop", g:"May Kitchenware 80 Yen Phu Hanoi" },
-    { t:"18:30", x:"晚餐 Bò Nướng Xuân Xuân", s:"47 Mã Mây，烤牛豬肉 10–15 萬。備案：回住處吃 27 Lò Đúc 烤肉串", m:["car","Grab 10 分"], p:"food:xuanxuan", g:"Bo Nuong Xuan Xuan 47 Ma May Hanoi" },
-    { t:"20:00", x:"Nhà Spa 75 分", s:"今天按（Tokyo 改週一）。營業到 22:00，預約 20:00 那場，按到 21:15。45 萬盾，現金。75 Hàng Mã 就在 Mã Mây 旁邊，吃完走過去。WhatsApp +84 354 060 675 預約", m:["walk","走 5 分"], p:"oldq", g:"Nha Spa 75 Hang Ma Hanoi" },
+  { n:7, d:"10/3", w:"週六", k:"free", lb:"博物館・皇城・老城回購", nt:"前一晚停電換民宿、3 點才睡，11:30 從原本的民宿出發。博物館和昇龍皇城只有今天進得去；皇城回來先換錢（Quốc Trinh 週日休，今天一定要換），再回購想買清單。西湖日落、MAY KITCHENWARE、竹帛湖小店這次放掉。22:00 前到家，隔天 08:30 下龍灣", ev:[
+    { t:"11:30", x:"出發 → 越南民族學博物館", s:"從原本的民宿 Grab 約 25 分，12:00 到。開到 17:30，8:30 開門，門票 4 萬盾，拍照 1 小時。在 Cầu Giấy，跟 Tokyo Massage 2 同一區", z:"w", m:["car","Grab 20 分"], p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi" },
+    { t:"13:15", x:"午餐 Phở Gà Tình → 真武觀", s:"42 Quán Thánh，開到晚上，雞肉乾拌河粉（整碗沒菜）。隔壁就是 9/28 漏掉的真武觀", m:["car","Grab 20 分"], p:"food:phogatinh", g:"Pho Ga Tinh 42 Quan Thanh Hanoi" },
+    { t:"14:15", x:"咖啡① Everbloom", s:"30 Châu Long，竹帛湖邊，從 Quán Thánh 走約 8 分，坐 30–40 分", m:["walk","走 8 分"], p:"food:everbloom", g:"Everbloom cafe 30 Chau Long Hanoi" },
+    { t:"15:00", x:"City Owls → 昇龍皇城 → 旗塔", s:"皇城 17:00 關，最晚 16:00 要進場。27 Phan Đình Phùng 小店（冰箱貼、插畫明信片）順路，再去皇城（到 17:00、門票 7 萬，全程只有今天進得去），旗塔在隔壁", z:"c", m:["car","Grab 10 分"], p:"badinh", g:"Imperial Citadel of Thang Long Hanoi" },
+    { t:"16:45", x:"換錢 Quốc Trinh（27–29 Hà Trung）", s:"從皇城 Grab 約 10 分。週六開到 18:00、週日休，今天一定要換。換 1,200 台幣（評論匯率約 1:803，約 96 萬盾），用 1,000 一張＋100 兩張，櫃台前點清楚。不收零頭就只換 1,000；備案隔壁 Thịnh Quang（每天 08–18）", m:["car","Grab"], g:"Quoc Trinh 27 Ha Trung Hanoi" },
+    { t:"17:15", x:"回購想買清單＋咖啡② Gói Gém", s:"Gói Gém（74 Hàng Nón，咖啡＋插畫，順便坐一下）→ Tired City（97 Hàng Gai）→ CULCAT（大教堂附近）→ Chu Choah（02 ngõ Hội Vũ）。要買什麼看「資訊 → 想買清單」。都走得到；有空可補 Chie（66 Hàng Trống，21:00 關）", m:["walk","走得到"], p:"food:goigem", g:"Goi Gem Cafe 74 Hang Non Hanoi" },
+    { t:"18:45", x:"晚餐 Bò Nướng Xuân Xuân", s:"47 Mã Mây，烤牛豬肉 10–15 萬。備案：回住處吃 27 Lò Đúc 烤肉串", m:["car","Grab 10 分"], p:"food:xuanxuan", g:"Bo Nuong Xuan Xuan 47 Ma May Hanoi" },
+    { t:"20:00", x:"Orient Spa 精油香薰按摩", s:"取代 Nhà Spa（那家不能刷卡），這家刷卡。時間和分店照預約確認信；四家都在老城：113 Hàng Bông、26 Ấu Triệu（大教堂旁）、36 Phùng Hưng（火車街旁），每天 10:00–22:00", m:["walk","走得到"], p:"oldq", g:"Orient Spa Hanoi" },
     { t:"21:30", x:"回家早睡", s:"22:00 前到家。餓的話住處旁 27 Lò Đúc 烤肉串當宵夜。隔天 8:30 要到歌劇院集合去下龍灣", m:["car","Grab"], p:"home", g:"@home" }
   ]},
   { n:8, d:"10/4", w:"週日", k:"trip", lb:"出城", nt:"08:30 出門、21:30 回來，13 小時。晚上不排東西", ev:[
@@ -624,7 +627,7 @@ var DAYS = [
     { t:"15:15", x:"蒂托夫島", s:"新月沙灘。登頂看全景是選配，不想爬就待沙灘。16:15 甲板日落派對", z:"o", p:"halong", g:"Ti Top Island Ha Long Bay" },
     { t:"17:30", x:"下船返回河內", s:"21:00–21:30 到住處。隔天 06:30 還劍湖晨拍，早點睡", z:"o", m:["van","車程 2.5 小時"], p:"home", g:"@home" }
   ]},
-  { n:9, d:"10/5", w:"週一", k:"free", lb:"還劍湖・老城逛街日", nt:"主題：吃＋咖啡＋文青小店＋男生衣服，全程走路。11:00 Tokyo Massage 2（Nhà Spa 週六已按）。帶足現金：很多小店只收現金。湖邊不好叫車，走出這一區再叫", ev:[
+  { n:9, d:"10/5", w:"週一", k:"free", lb:"還劍湖・老城逛街日", nt:"主題：吃＋咖啡＋文青小店＋男生衣服，全程走路。11:00 Tokyo Massage 2（週六已按 Orient Spa）。帶足現金：很多小店只收現金。湖邊不好叫車，走出這一區再叫", ev:[
     { t:"06:30", x:"（可選）還劍湖晨拍龜塔", s:"人少光軟。前一晚下龍灣太晚回就補眠", m:["walk","走 20 分"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" },
     { t:"07:00", x:"蛋咖啡 Café Giảng", s:"39 Nguyễn Hữu Huân，7 點開門。換錢備案：Hà Trung 街 Quốc Trinh 08:00 開門", m:["walk","走得到"], p:"food:giang", g:"Cafe Giang 39 Nguyen Huu Huan Hanoi" },
     { t:"08:00", x:"早餐 Phở Bò Ấu Triệu → 大教堂拍照", s:"34 Ấu Triệu，必比登牛肉河粉（說 không hành）。旁邊就是聖若瑟大教堂，側邊小街比正門好拍", m:["car","Grab"], p:"cathedral", g:"Pho Bo Au Trieu 34 Au Trieu Hanoi" },
@@ -635,7 +638,7 @@ var DAYS = [
     { t:"下午", x:"老城衣服＋古街北邊", s:"White Ant、The Maven 買手服飾 → KHÁC STORE 古著（19 Mã Mây）→ 白馬寺 → 咖啡 Tám Café（19 Hàng Chinh）。伴手禮：Maison Marou 巧克力、Nón Lá 咖啡膠囊（多比幾家、可殺價）、Hàng Đường 蜜餞街", m:["walk","走得到"], p:"food:khac", g:"KHAC STORE 19 Ma May Hanoi" },
     { t:"15:15", x:"火車街（白天）", s:"Lê Duẩn 段，15:30 那班有光。9/30 沒去成，這次補上。不等火車也可以，鐵軌和老房子本身就好拍", m:["car","Grab 10 分"], p:"train", g:"Hanoi Train Street Le Duan" },
     { t:"傍晚", x:"龍邊橋 → Serein Cafe", s:"古街往北走，Serein Cafe & Lounge 看龍邊橋和火車，17:45 日落", m:["walk","走得到"], p:"food:serein", g:"Serein Cafe Lounge Hanoi" },
-    { t:"晚上", x:"晚餐＋整理行李", s:"Bò Nướng Xuân Xuân 或住處附近。隔天 11:00 前退房", m:["car","Grab"], p:"home", g:"@home" }
+    { t:"晚上", x:"晚餐 → 法國區晚上散步 → 整理行李", s:"住處附近吃完晚餐走過去：歌劇院打燈、Tràng Tiền 街、Metropole 一帶，散步約 1 小時。回來整理行李，隔天 11:00 前退房", m:["walk","走得到"], p:"opera", g:"Hanoi Opera House" }
   ]},
   { n:10, d:"10/6", w:"週二", k:"free", lb:"回程", nt:"早上胡志明陵和主席府，退房後逛 Vincom、喝最後一杯咖啡，14:30 出發去機場", ev:[
     { t:"07:30", x:"胡志明陵", s:"週二有開，只開上午（約 7:30–10:30），免費。要長褲，不能背心短褲，不能帶大包。早點到排隊比較短", z:"c", m:["car","Grab"], p:"badinh", g:"Ho Chi Minh Mausoleum Hanoi" },
@@ -1185,6 +1188,14 @@ var PHRASES = [
   { v:"Cảm ơn", z:"謝謝" }
 ];
 var INFO = [
+  { h:"想買清單", items:[
+    { b:"Chu Choah（02 ngõ Hội Vũ）", p:"小板凳加啤酒的手作 magnet" },
+    { b:"CULCAT（大教堂附近）", p:"水洗灰 T 恤：等角視角的 CULCAT 小店插畫＋直排橘字「HANOI」＋ Lý Quốc Sư 路牌" },
+    { b:"Gói Gém（74 Hàng Nón）", p:"水洗灰 T 恤「HANOI LIVE LAUGH LOVE」，有路牌、國旗、紅色小板凳、滴濾咖啡、法棍" },
+    { b:"Tired City（97 Hàng Gai）", p:"綠色 T 恤，八格普普風 BIA HÀ NỘI 啤酒罐" },
+    { b:"什麼時候買", p:"10/3 下午從昇龍皇城回市區、到 Hà Trung 換完錢一起買；備案 10/5 早上大教堂之後" },
+    { b:"待辦：法國區晚上散步", p:"歌劇院打燈、Tràng Tiền 街、Metropole 一帶，排在 10/5 晚上，住處附近吃完晚餐走過去" }
+  ]},
   { h:"出發前", items:[
     { b:"★ 數位入境卡　9/24 16:50 之後才能填", p:"官網 prearrival.immigration.gov.vn，完全免費。2026/6/10 起內排機場強制，免簽旅客也要填。只能在抵達前 72 小時內提交，系統不收更早的申報。建議 9/25–26 填掉，別拖到出門當天。要準備：護照資料、班機 CI793、住宿完整地址、健康自我聲明。入境目的填觀光。填完的 QR Code 記得截圖存相簿，入境時海關要掃。會跟你收費的都是第三方轉賣網站。" },
     { b:"Zalo 和 Grab 先在台灣註冊好", p:"用台灣號碼（+886）註冊登入，Grab 順便把信用卡綁好。你買的 eSIM 越南號碼是回收再利用的，註冊不了任何 App——這是供應商自己寫明的，不是保險起見。" },
