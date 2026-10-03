@@ -314,6 +314,13 @@ select.ri{padding-right:15px;
 .lines{margin:0;padding:12px 16px;font-size:14px;line-height:1.72;color:var(--soft);
   position:relative}
 .fld .rl{flex:none;width:100px;font-size:16px;color:var(--soft)}
+.note-ta{display:block;width:100%;min-height:130px;border:0;background:transparent;padding:12px 16px;font-size:16px;line-height:1.55;resize:vertical;box-sizing:border-box;color:var(--ink)}
+.note-ta:focus{outline:0}
+.wrow .wt{flex:1;font-size:16px;line-height:1.4}
+.wrow.on .wt{color:var(--quiet);text-decoration:line-through}
+.wrow .wrm{flex:none;border:0;background:transparent;color:var(--quiet);font-size:20px;padding:0 4px}
+.wadd input{flex:1;border:0;background:transparent;padding:0;font-size:16px;color:var(--ink)}
+.wadd input:focus{outline:0}
 .fld .ri{flex:1;max-width:none;text-align:left;color:var(--ink);font-size:16px}
 .go{flex:none;font-size:15px;font-weight:600;color:var(--brand);text-decoration:none;
   padding:4px 0 4px 8px;white-space:nowrap}
@@ -608,7 +615,7 @@ var DAYS = [
     { t:"22:30", x:"The Balcony Beer", s:"7 Đinh Liệt，二樓陽台酒吧，NT$148（原本排的 Northern Soul 改來這）", m:["walk","走得到"], p:"oldq", g:"The Balcony Beer 7 Dinh Liet Hanoi", done:1 },
     { t:"之後", x:"Grab 回住處", s:"住處停電，半夜換了另一間民宿", m:["car","Grab"], p:"home", g:"@home", done:1 }
   ]},
-  { n:7, d:"10/3", w:"週六", k:"free", lb:"博物館・皇城・老城回購", nt:"晚餐前都完成了。前一晚停電換民宿，11:30 出發。到晚餐花 NT$1,521（交通 316、門票 178、餐飲 304、購物 723），現金用掉 52.9 萬盾。沒去：City Owls（沒興趣）、18 Hoàng Diệu 考古區、岱依族高腳屋、D67 地堡（沒找到入口）。明天 07:55 到 160 Trần Quang Khải 集合，帶護照", ev:[
+  { n:7, d:"10/3", w:"週六", k:"free", lb:"博物館・皇城・老城回購", nt:"已完成。前一晚停電去別間睡，11:30 出發。全天花 NT$2,320（交通 390、門票 178、餐飲 424、購物 797、按摩 531），現金用掉 56.5 萬盾。記帳到 10/3 結束 NT$27,369，離目標 32,700 還剩 5,331。沒去：City Owls（沒興趣）、18 Hoàng Diệu 考古區、岱依族高腳屋、D67 地堡（沒找到入口）", ev:[
     { t:"12:00", x:"越南民族學博物館", s:"Grab NT$90，門票 4 萬，飲料 5 萬。戶外看了占族、京族瓦房、埃地族長屋、巴拿族公共屋、嘉萊族墓屋、戈都族墓屋、瑤族、苗族、哈尼族；室內銅鼓館。13:40 出場", m:["car","Grab"], p:"nghiado", g:"Vietnam Museum of Ethnology Hanoi", done:1 },
     { t:"14:10", x:"午餐 Phở Thìn Bờ Hồ", s:"19 Hàng Vôi，7.5 萬盾，Grab NT$63", m:["car","Grab"], p:"food:phothinboho", g:"Pho Thin Bo Ho 19 Hang Voi Hanoi", done:1 },
     { t:"14:30", x:"昇龍皇城", s:"門票實付 10 萬（不是 7 萬），Grab NT$47。剛好碰上河內世界文化節（10/1–10/4）。看了朝代展、敬天殿龍階梯、D67 樓", m:["car","Grab"], p:"badinh", g:"Imperial Citadel of Thang Long Hanoi", done:1 },
@@ -618,9 +625,9 @@ var DAYS = [
     { t:"17:30", x:"老城回購", s:"Chu Choah 小板凳 magnet 14.9 萬 ✓；CULCAT（45 Lý Quốc Sư）T 恤 NT$534 刷卡 ✓；Tired City 太貴不買；Gói Gém 沒有想要的", m:["walk","走得到"], p:"food:culcat", g:"CULCAT 45 Ly Quoc Su Hanoi", done:1 },
     { t:"19:00", x:"晚餐 Bún chả Hương Liên", s:"24 Lê Văn Hưu，6 萬盾，Grab NT$38", m:["car","Grab"], p:"food:huonglien", g:"Bun Cha Huong Lien 24 Le Van Huu Hanoi", done:1 },
     { t:"19:25", x:"回住處洗澡休息", s:"", m:["car","Grab"], p:"home", g:"@home", done:1 },
-    { t:"20:30", x:"Orient Spa 精油香薰按摩（大教堂分店）", s:"26 Ấu Triệu（大教堂旁）。已約 20:30，42 萬盾刷卡，按 60 或 75 分，21:30–21:45 結束。按完走 10 分鐘或 Grab 5 分到 Cộng Cà Phê Cầu Gỗ", m:["car","Grab"], p:"cathedral", g:"Orient Spa 26 Au Trieu Hanoi" },
-    { t:"21:45", x:"住處附近找間酒吧或咖啡廳", s:"自己挑。Cộng Cà Phê Cầu Gỗ 改到週一晚上（週末還劍湖封街，看不到機車車流）", m:["car","Grab"], p:"home", g:"@home" },
-    { t:"22:45", x:"回家早睡", s:"22:45 前回到住處（已搬回原本的民宿）。餓的話住處旁 27 Lò Đúc 烤肉串當宵夜。隔天 07:55 要到 160 Trần Quang Khải 集合去下龍灣（帶護照）", m:["car","Grab"], p:"home", g:"@home" }
+    { t:"20:30", x:"Orient Spa 精油香薰按摩（大教堂分店）", s:"26 Ấu Triệu，NT$531 刷卡，Grab NT$20", m:["car","Grab"], p:"cathedral", g:"Orient Spa 26 Au Trieu Hanoi", done:1 },
+    { t:"之後", x:"啤酒＋麵包＋貼紙", s:"啤酒 NT$74（刷卡）、麵包 3.6 萬盾（現金）、貼紙 NT$74（刷卡）。Cộng Cà Phê Cầu Gỗ 改到週一晚上", m:["walk","走得到"], p:"oldq", g:"Hoan Kiem Hanoi", done:1 },
+    { t:"最後", x:"Grab 回住處", s:"NT$54。明天 07:35 出門，07:55 到 160 Trần Quang Khải 集合，帶護照", m:["car","Grab"], p:"home", g:"@home", done:1 },
   ]},
   { n:8, d:"10/4", w:"週日", k:"trip", lb:"下龍灣（龍王號）", nt:"龍王號 Dragon King Cruise 一日遊（訂單 26KK259914076）。07:55 前到 160 Trần Quang Khải 集合，約 20:30–21:00 回到河內。車牌和導遊聯絡方式 10/3 晚上會傳來。帶護照。晚上不排東西", ev:[
     { t:"07:35", x:"出門 → 07:55 集合 160 Trần Quang Khải", s:"住處在老城外，不接送，要自己到集合點。7:55–8:10 上車，7:55 前要到。從住處 Grab 約 10 分（我估的，出門前用 Google Maps 確認）：https://maps.app.goo.gl/tXZ7Kk5Mg56NfERe9", m:["car","Grab"], p:"oldq", g:"160 Tran Quang Khai Hanoi" },
@@ -1195,19 +1202,6 @@ var PHRASES = [
   { v:"Cảm ơn", z:"謝謝" }
 ];
 var INFO = [
-  { h:"想買清單", items:[
-    { b:"✓ Chu Choah（02 ngõ Hội Vũ）", p:"小板凳加啤酒的手作 magnet，10/3 已買（14.9 萬）" },
-    { b:"✓ CULCAT（45 Lý Quốc Sư）", p:"水洗灰 T 恤，10/3 已買（NT$534 刷卡）" },
-    { b:"Gói Gém（74 Hàng Nón）", p:"10/3 沒有想要的，10/5 有空再看一次" },
-    { b:"✗ Tired City", p:"太貴，劃掉" },
-    { b:"CULCAT 貼紙", p:"還沒買，下次經過 CULCAT 任一家分店補（45 Lý Quốc Sư／87 Hàng Gai／47-21 Hàng Bông／9C Đinh Liệt）" },
-    { b:"一幅畫", p:"想買一幅小畫，逛老城、文創店時留意" },
-    { b:"購物商場", p:"想逛一下購物商場：10/6 退房後的 Vincom Center Bà Triệu 本來就有排" },
-    { b:"想再吃：乾撈 phở 一次", p:"phở trộn／phở khô（乾拌），雞肉或牛肉都可以" },
-    { b:"想再吃：湯 phở 一次", p:"牛肉湯河粉；10/5 早餐 Phở Bò Ấu Triệu 就是湯的" },
-    { b:"10/5 照排", p:"Collective Memory、Nagu、Tân Mỹ 刺繡、Hanoi la… 手繪 T" },
-    { b:"待辦：法國區晚上散步", p:"歌劇院打燈、Tràng Tiền 街、Metropole 一帶，排在 10/5 晚上，住處附近吃完晚餐走過去" }
-  ]},
   { h:"出發前", items:[
     { b:"★ 數位入境卡　9/24 16:50 之後才能填", p:"官網 prearrival.immigration.gov.vn，完全免費。2026/6/10 起內排機場強制，免簽旅客也要填。只能在抵達前 72 小時內提交，系統不收更早的申報。建議 9/25–26 填掉，別拖到出門當天。要準備：護照資料、班機 CI793、住宿完整地址、健康自我聲明。入境目的填觀光。填完的 QR Code 記得截圖存相簿，入境時海關要掃。會跟你收費的都是第三方轉賣網站。" },
     { b:"Zalo 和 Grab 先在台灣註冊好", p:"用台灣號碼（+886）註冊登入，Grab 順便把信用卡綁好。你買的 eSIM 越南號碼是回收再利用的，註冊不了任何 App——這是供應商自己寫明的，不是保險起見。" },
@@ -1519,7 +1513,19 @@ var rate     = load("hn-rate", 790);
 var book     = load("hn-book", {});
 var wx       = load("hn-wx", null);
 var food     = load("hn-food", {});    /* 餐廳想吃／吃過的標記 */
-var pics     = load("hn-pic", {});     /* 餐廳照片，縮成 400px 存在這支手機裡，不會上傳 */
+var pics     = load("hn-pic", {});
+var note     = load("hn-note", "");   /* 自己記的筆記，只存在這支手機 */
+var WISH0 = [
+  ["Chu Choah 小板凳 magnet（10/3 已買）",1],["CULCAT T 恤（10/3 已買）",1],
+  ["貼紙：10/3 晚上買了 NT$74，確認是不是 CULCAT 的",0],["Gói Gém：10/5 有空再看一次",0],
+  ["一幅畫（約 NT$400，刷卡）",0],["逛購物商場（10/6 Vincom Center Bà Triệu）",0],
+  ["再吃一次乾撈 phở",0],["再吃一次湯 phở",0],
+  ["10/5：Collective Memory、Nagu、Tân Mỹ 刺繡、Hanoi la… 手繪 T",0],
+  ["10/5 晚上：還劍湖夜景＋Cộng Cà Phê Cầu Gỗ 看車流 → 法國區散步",0],
+  ["乾貨：咖啡、蓮花茶、腰果、果乾（10/6 Chợ Hôm；肉乾不能帶回台灣）",0]
+];
+var wish     = load("hn-wish", null);  /* 想買／想做清單，可自己加減打勾 */
+if (!wish) { wish = WISH0.map(function (w) { return { t: w[0], d: w[1] }; }); save("hn-wish", wish); }     /* 餐廳照片，縮成 400px 存在這支手機裡，不會上傳 */
 var mapMode  = "core";                 /* 地圖面板：core 市中心 / city 全河內 / g Google */
 var gq       = null;                   /* Google 地圖目前顯示哪個地點 */   /* {at:抓到的時間, d:{"9/27":[天氣碼,高溫,低溫,降雨%]}} */
 var curDay   = 0;          /* 0 = 總覽，1–10 = 第幾天 */
@@ -2167,8 +2173,27 @@ function renderFood() {
 
 /* ------------------------------------------------------------------ info */
 
+function noteGroup() {
+  var w = wish.map(function (x, i) {
+    return '<div class="row wrow' + (x.d ? " on" : "") + '">' +
+      '<button class="ck ' + (x.d ? "on" : "") + '" data-wck="' + i + '" aria-label="打勾">' + ICON_CK + '</button>' +
+      '<span class="wt">' + esc(x.t) + '</span>' +
+      '<button class="wrm" data-wrm="' + i + '" aria-label="刪除">×</button></div>';
+  }).join("");
+  return '<p class="ghead">我的筆記（只存在這支手機）</p><div class="group">' +
+    '<textarea class="note-ta" data-note="1" placeholder="想到什麼就記在這裡…">' + esc(note) + '</textarea></div>' +
+    '<p class="ghead">想買／想做清單</p><div class="group">' + w +
+    '<div class="row wadd"><input id="wishIn" type="text" placeholder="新增一項…" enterkeyhint="done">' +
+    '<button class="tint" data-wadd="1">加入</button></div></div>' +
+    '<p style="padding:8px 16px 0"><button class="tint" data-ncp="1">複製筆記＋清單（貼給 Claude chat）</button></p>';
+}
+function addWish() {
+  var inp = $("wishIn"); var t = inp && inp.value.trim();
+  if (!t) { return; }
+  wish.push({ t: t, d: 0 }); save("hn-wish", wish); renderInfo();
+}
 function renderInfo() {
-  var html = wxGroup() + INFO.map(function (g) {
+  var html = noteGroup() + wxGroup() + INFO.map(function (g) {
     return '<p class="ghead">' + esc(g.h) + '</p><div class="group">' +
       g.items.map(function (i) {
         /* p 可以是一段文字，也可以是字串陣列（一行一項，適合價目表） */
@@ -2314,6 +2339,7 @@ function copyDay() {
 
 document.addEventListener("input", function (ev) {
   var el = ev.target;
+  if (el && el.dataset && el.dataset.note) { note = el.value; save("hn-note", note); return; }
   if (!el || !el.dataset || !el.dataset.bk) { return; }
   var p = el.dataset.bk.split("|");
   if (!book[p[0]]) { book[p[0]] = {}; }
@@ -2327,6 +2353,10 @@ document.addEventListener("input", function (ev) {
         ? "tel:" + el.value.replace(/\s/g, "") : el.value);
     } else { row.classList.add("off"); }
   }
+});
+
+document.addEventListener("keydown", function (ev) {
+  if (ev.target && ev.target.id === "wishIn" && ev.key === "Enter") { ev.preventDefault(); addWish(); }
 });
 
 document.addEventListener("change", function (ev) {
@@ -2408,6 +2438,20 @@ document.addEventListener("click", function (ev) {
     save("hn-cats", cats); renderCats(); return;
   }
 
+  var wck = el.closest("[data-wck]");
+  if (wck) { var wi = +wck.dataset.wck; wish[wi].d = wish[wi].d ? 0 : 1; save("hn-wish", wish); renderInfo(); return; }
+  var wrm = el.closest("[data-wrm]");
+  if (wrm) {
+    var ri = +wrm.dataset.wrm;
+    if (confirm("刪掉「" + wish[ri].t + "」？")) { wish.splice(ri, 1); save("hn-wish", wish); renderInfo(); }
+    return;
+  }
+  if (el.closest("[data-wadd]")) { addWish(); return; }
+  if (el.closest("[data-ncp]")) {
+    copy("【我的筆記】\n" + (note || "（空）") + "\n\n【想買／想做清單】\n" +
+      wish.map(function (x) { return (x.d ? "✓ " : "・") + x.t; }).join("\n"));
+    return;
+  }
   var cp = el.closest("[data-cp]");
   if (cp) {
     var av = ADDR[+cp.dataset.cp].v;
