@@ -629,34 +629,39 @@ var DAYS = [
     { t:"之後", x:"啤酒＋麵包＋貼紙", s:"啤酒 NT$74（刷卡）、麵包 3.6 萬盾（現金）、貼紙 NT$74（刷卡）。Cộng Cà Phê Cầu Gỗ 改到週一晚上", m:["walk","走得到"], p:"oldq", g:"Hoan Kiem Hanoi", done:1 },
     { t:"最後", x:"Grab 回住處", s:"NT$54。明天 07:35 出門，07:55 到 160 Trần Quang Khải 集合，帶護照", m:["car","Grab"], p:"home", g:"@home", done:1 },
   ]},
-  { n:8, d:"10/4", w:"週日", k:"trip", lb:"下龍灣（龍王號）", nt:"龍王號 Dragon King Cruise 一日遊（訂單 26KK259914076）。07:55 前到 160 Trần Quang Khải 集合，約 20:30–21:00 回到河內。車牌和導遊聯絡方式 10/3 晚上會傳來。帶護照。晚上不排東西", ev:[
-    { t:"07:35", x:"出門 → 07:55 集合 160 Trần Quang Khải", s:"住處在老城外，不接送，要自己到集合點。7:55–8:10 上車，7:55 前要到。從住處 Grab 約 10 分（我估的，出門前用 Google Maps 確認）：https://maps.app.goo.gl/tXZ7Kk5Mg56NfERe9", m:["car","Grab"], p:"oldq", g:"160 Tran Quang Khai Hanoi" },
-    { t:"11:30", x:"團洲碼頭登船（龍王號）", s:"巴士約 2.5–3 小時，中途停休息站。龍王號三層甲板、最多 99 人，陽光甲板有按摩浴缸。船上海鮮午餐", z:"o", m:["van","車程 2.5–3 小時"], p:"halong", g:"Tuan Chau Marina Ha Long" },
-    { t:"下午", x:"驚訝洞", s:"下龍灣最大的鐘乳石洞。洞內階梯多又濕滑，鞋子要好走", z:"o", p:"halong", g:"Sung Sot Cave Ha Long Bay" },
-    { t:"下午", x:"蒂托夫島", s:"新月沙灘。登頂看全景要爬樓梯，不想爬就待沙灘", z:"o", p:"halong", g:"Ti Top Island Ha Long Bay" },
-    { t:"下午", x:"盧昂洞划槳＋日落派對", s:"划槳穿過盧昂洞，含在團費裡。回程船上有免費日落派對", z:"o", p:"halong", g:"Luon Cave Ha Long Bay" },
-    { t:"18:00", x:"回團洲碼頭 → 巴士回河內", s:"約 20:30–21:00 回到 160 Trần Quang Khải，再 Grab 回住處。隔天 06:30 還劍湖晨拍是可選，累就補眠", z:"o", m:["van","車程 2.5–3 小時"], p:"home", g:"@home" }
+  { n:8, d:"10/4", w:"週日", k:"trip", lb:"下龍灣（龍王號）", nt:"已完成。龍王號 Dragon King Cruise 一日遊；晚上 Bò Nướng Xuân Xuân 烤肉 → 天台酒吧 chot。到 10/4 總花費 NT$28,081，目標 32,700，剩 4,619。還劍湖步行街確認：每週五 19:00 到週日 24:00 封路", ev:[
+    { t:"07:35", x:"出門 → 07:55 集合 160 Trần Quang Khải", s:"住處在老城外，不接送，要自己到集合點。7:55–8:10 上車，7:55 前要到。從住處 Grab 約 10 分（我估的，出門前用 Google Maps 確認）：https://maps.app.goo.gl/tXZ7Kk5Mg56NfERe9", m:["car","Grab"], p:"oldq", g:"160 Tran Quang Khai Hanoi", done:1 },
+    { t:"11:30", x:"團洲碼頭登船（龍王號）", s:"巴士約 2.5–3 小時，中途停休息站。龍王號三層甲板、最多 99 人，陽光甲板有按摩浴缸。船上海鮮午餐", z:"o", m:["van","車程 2.5–3 小時"], p:"halong", g:"Tuan Chau Marina Ha Long", done:1 },
+    { t:"下午", x:"驚訝洞", s:"下龍灣最大的鐘乳石洞。洞內階梯多又濕滑，鞋子要好走", z:"o", p:"halong", g:"Sung Sot Cave Ha Long Bay", done:1 },
+    { t:"下午", x:"蒂托夫島", s:"新月沙灘。登頂看全景要爬樓梯，不想爬就待沙灘", z:"o", p:"halong", g:"Ti Top Island Ha Long Bay", done:1 },
+    { t:"下午", x:"盧昂洞竹筏＋日落派對", s:"盧昂洞選了竹筏（不是划槳）。回程船上有日落派對", z:"o", p:"halong", g:"Luon Cave Ha Long Bay", done:1 },
+    { t:"18:00", x:"回團洲碼頭 → 巴士回河內", s:"約 20:30–21:00 回到 160 Trần Quang Khải，再 Grab 回住處。隔天 06:30 還劍湖晨拍是可選，累就補眠", z:"o", m:["van","車程 2.5–3 小時"], p:"home", g:"@home", done:1 },
+    { t:"晚上", x:"晚餐 Bò Nướng Xuân Xuân 烤肉", s:"47 Mã Mây", m:["car","Grab"], p:"food:xuanxuan", g:"Bo Nuong Xuan Xuan 47 Ma May Hanoi", done:1 },
+    { t:"之後", x:"天台酒吧 chot", s:"", m:["walk","走得到"], p:"oldq", g:"chot rooftop bar Hanoi", done:1 }
   ]},
-  { n:9, d:"10/5", w:"週一", k:"free", lb:"還劍湖・老城逛街日", nt:"主題：吃＋咖啡＋文青小店＋男生衣服，全程走路。11:00 TM2（週六已按 Orient Spa）。帶足現金：很多小店只收現金。湖邊不好叫車，走出這一區再叫", ev:[
-    { t:"06:30", x:"（可選）還劍湖晨拍龜塔", s:"人少光軟。前一晚下龍灣太晚回就補眠", m:["walk","走 20 分"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" },
-    { t:"07:00", x:"蛋咖啡 Café Giảng", s:"39 Nguyễn Hữu Huân，7 點開門。換錢備案：Hà Trung 街 Quốc Trinh 08:00 開門", m:["walk","走得到"], p:"food:giang", g:"Cafe Giang 39 Nguyen Huu Huan Hanoi" },
-    { t:"08:00", x:"早餐 Phở Bò Ấu Triệu → 大教堂拍照", s:"34 Ấu Triệu，必比登牛肉河粉（說 không hành）。旁邊就是聖若瑟大教堂，側邊小街比正門好拍", m:["car","Grab"], p:"cathedral", g:"Pho Bo Au Trieu 34 Au Trieu Hanoi" },
-    { t:"09:00", x:"咖啡 Loading T Café", s:"8 Chân Cầm，大教堂旁整棟老洋房咖啡，很好拍。週五晚上 20:00 才到、沒逛到的 3 家在這裡補：Collective Memory（12 Nhà Chung，10:00–18:30）、Nagu 斗笠小熊（78 Hàng Trống，09:00–19:00）、Tân Mỹ 刺繡（16 Hàng Trống，09:30–19:30）。都在大教堂旁邊走得到，Collective Memory 10 點才開，排最後", m:["walk","走得到"], p:"food:loadingt", g:"Loading T Cafe 8 Chan Cam Hanoi" },
-    { t:"11:00", x:"TM2", s:"11:00 開門，按到 12:20，再 Grab 回老城（約 20 分）。1.2M，現金", z:"w", m:["car","Grab 20 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
-    { t:"中午", x:"Hàng Bông 先下單 → 午餐", s:"先到 Hanoi la…（96 Hàng Bông）AirDrop 圖案訂手繪 T（1–2 小時、只收現金），逛完再回來拿。順路 Tống Duy Tân：Vui Studio、Mi Ami Caffè。午餐 Don Duck（29 Bát Đàn，烤鴨湯麵 12.5 萬）或法棍", m:["walk","走得到"], p:"food:hanoila", g:"Hanoi la 96 Hang Bong Hanoi" },
-    { t:"下午", x:"還劍湖打卡路線", s:"Phúc Lợi 印章 → Cafe Phố Cổ（11 Hàng Gai 頂樓看湖）→ Tan My Design（61 Hàng Gai）→ The Note Coffee／HASAI 手沖（挑一家）→ Giao Mùa → 玉山祠 → 沿湖拍龜塔 → UNIQLO Hoàn Kiếm（白色法式建築）。咖啡不用每家都喝", m:["walk","走得到"], p:"hoankiem", g:"Hoan Kiem Lake Hanoi" },
-    { t:"下午", x:"老城衣服＋古街北邊", s:"White Ant、The Maven 買手服飾 → KHÁC STORE 古著（19 Mã Mây）→ 白馬寺 → 咖啡 Tám Café（19 Hàng Chinh）。伴手禮：Maison Marou 巧克力、Nón Lá 咖啡膠囊（多比幾家、可殺價）、Hàng Đường 蜜餞街", m:["walk","走得到"], p:"food:khac", g:"KHAC STORE 19 Ma May Hanoi" },
-    { t:"15:15", x:"火車街（白天）", s:"Lê Duẩn 段，15:30 那班有光。9/30 沒去成，這次補上。不等火車也可以，鐵軌和老房子本身就好拍", m:["car","Grab 10 分"], p:"train", g:"Hanoi Train Street Le Duan" },
-    { t:"傍晚", x:"龍邊橋 → Serein Cafe", s:"古街往北走，Serein Cafe & Lounge 看龍邊橋和火車，17:45 日落", m:["walk","走得到"], p:"food:serein", g:"Serein Cafe Lounge Hanoi" },
-    { t:"晚上", x:"晚餐 → 還劍湖夜景＋Cộng Cà Phê Cầu Gỗ 看車流 → 法國區散步 → 整理行李", s:"週一不封街：先到還劍湖北邊 Cộng Cà Phê Cầu Gỗ 上樓陽台看路口機車車流，順便看還劍湖夜景；再往南走法國區：歌劇院打燈、Tràng Tiền 街、Metropole 一帶，散步約 1 小時。回來整理行李，隔天 11:00 前退房", m:["walk","走得到"], p:"opera", g:"Hanoi Opera House" }
+  { n:9, d:"10/5", w:"週一", k:"free", lb:"還劍湖・老城逛街日", nt:"10:15 出門，早上吃完去 11:30 TM2，下午整段在市區。現金 200 萬：100 萬留給 TM2，另外 100 萬付小店和 10/6 乾貨。時間、營業時間都用 Google Maps 查過（10/5 凌晨查，車程是當下路況）。一定要看：15:10 火車街、18:00 Cộng 看車流。今天三餐、兩家咖啡（火車街、Cộng）、一間酒吧（Hanoi House）。還劍湖只在晚上看一次", ev:[
+    { t:"10:15", x:"出門 → 早餐 Phở Khôi Hói（湯 phở，同事推薦）", s:"50 Hàng Vải，Google Maps 週一 06:00–21:00、4.2 分。從住處 Grab 約 14 分（3.1 公里），10:30 到。招牌 phở bò tái lăn，說 không hành。每人 10 萬內，現金", m:["car","Grab 14 分"], p:"oldq", g:"Pho Khoi Hoi 50 Hang Vai Hanoi" },
+    { t:"10:50", x:"Long Châu 藥局（想買清單）", s:"93 Hàng Mã，從 Phở Khôi Hói 走 2 分，Google Maps 到 22:00。買 BXT＋藍色小藥丸。11:00 在這裡叫 Grab 去 TM2（約 29 分）", m:["walk","走 2 分"], p:"oldq", g:"Nha Thuoc FPT Long Chau 93 Hang Ma Hanoi" },
+    { t:"11:30", x:"TM2（1 小時）", s:"從 Hàng Mã Grab 約 29 分。按到 12:30。100 萬現金（已經預留）。預約記得約 11:30", z:"w", m:["car","Grab 29 分"], p:"caugiay", g:"Pho Nguyen Thi Dinh, Yen Hoa, Cau Giay, Hanoi" },
+    { t:"13:00", x:"午餐 Xôi Yến 糯米飯", s:"35B Nguyễn Hữu Huân，Google Maps 每天 06:00–00:00。從 TM2 Grab 約 30 分。整碗沒菜，炸紅蔥頭不要就說 không hành phi。約 5–8 萬，現金", m:["car","Grab 30 分"], p:"food:xoiyen", g:"Xoi Yen 35B Nguyen Huu Huan Hanoi" },
+    { t:"13:45", x:"文創小店＋買畫（伴手禮）", s:"從 Xôi Yến 走約 14 分到大教堂一帶，全程走路：Líu Lô Arts（19 Chân Cầm，09:00–21:00）→ CULCAT（45 Lý Quốc Sư，09:30–23:00，門外復古電視可自拍）→ TiredCity（2D Lý Quốc Sư，08:30–22:30）→ Hàng Gai 買畫：Green Palm Gallery（39 Hàng Gai，到 19:00）／Thang Long Art Gallery（41 Hàng Gai，到 20:00），約 NT$400 刷卡 → 走 6 分到 Gói Gém（74 Hàng Nón，08:00–22:00）。營業時間都是 Google Maps", m:["walk","走 14 分"], p:"food:liulo", g:"Liu Lo Arts 19 Chan Cam Hanoi" },
+    { t:"15:00", x:"火車街 Nam Vy Coffee（一定要看）", s:"從 Gói Gém Grab 約 10 分，15:10 到（ngõ 222 Lê Duẩn，Google Maps 週一 10:30–20:00）。Lê Duẩn 段下午最多來源一致的是 15:20–15:45 這班（對得上鐵路局 SE5 15:30／15:45 出河內站），常有 15–30 分誤差，進店先問店員今天幾點。Phùng Hưng 段 2026 年起減班，不要去那段等", m:["car","Grab 10 分"], p:"food:namvy", g:"Nam Vy Coffee Hanoi Train Street" },
+    { t:"16:00", x:"Maison Marou 薄荷冰淇淋＋巧克力伴手禮", s:"91 Thợ Nhuộm，巧克力適合當伴手禮，多半能刷卡。Google Maps 到 22:00，從火車街 Grab 約 6 分", m:["car","Grab 6 分"], p:"food:maisonmarou", g:"Maison Marou Flagship Hanoi" },
+    { t:"16:45", x:"Hàng Bông 逛街（伴手禮）", s:"從 Maison Marou 走約 16 分（或 Grab）。沿 Hàng Bông 往東：Linh Gallery（88 Hàng Bông，4.9 分，到 22:00，買畫備案）→ CULCAT（47-21 Hàng Bông）→ TiredCity（18 Hàng Bông）。17:50 從 18 Hàng Bông 走約 5 分到 Cộng", m:["walk","走 16 分"], p:"oldq", g:"Linh Gallery 88 Hang Bong Hanoi" },
+    { t:"18:00", x:"Cộng Cà Phê Cầu Gỗ 看車流（一定要看）", s:"從 Hàng Bông 走約 5 分，Google Maps 週一 07:30–23:00。日落 17:41，到的時候天剛暗、下班車流正多。週一沒封路，上樓陽台看路口機車車流，順便看還劍湖。點椰子冰沙不加咖啡", m:["walk","走 5 分"], p:"food:congcaugo", g:"Cong Caphe Cau Go Hanoi" },
+    { t:"18:45", x:"晚餐 Phở xào Bà Thanh Béo（乾撈／炒 phở）", s:"11 Hàng Buồm，Google Maps 週一 17:30–23:00，從 Cộng 走約 7 分。炒牛腱河粉約 5 萬，說 không rau, không hành。現金。錯過下午的火車：吃完叫 Grab 去 Nam Vy 看 19:10–19:50 那班（對得上 SE3 19:20 出站；Nam Vy 20:00 關），夜逛縮短", m:["walk","走 7 分"], p:"food:phoxao", g:"Pho xao Ba Thanh Beo 11 Hang Buom Hanoi" },
+    { t:"19:30", x:"夜逛：CULCAT Đinh Liệt＋附近小店", s:"CULCAT（9C Đinh Liệt，Google Maps 週一到 23:30）從晚餐走過去很近，順便補貼紙或伴手禮；Hàng Gai／Hàng Bông 的小店多半開到 21–22 點，Linh Gallery（88 Hàng Bông，到 22:00）也能補買畫", m:["walk","走得到"], p:"food:culcat", g:"CULCAT 9C Dinh Liet Hanoi" },
+    { t:"20:30", x:"法國區散步", s:"歌劇院打燈、Tràng Tiền 街、Metropole 一帶", m:["walk","走得到"], p:"opera", g:"Hanoi Opera House" },
+    { t:"21:30", x:"Hanoi House Cocktail Bar", s:"47A Lý Quốc Sư，Google Maps 週一 16:30–00:00，陽台看大教堂夜景", m:["car","Grab"], p:"cathedral", g:"Hanoi House Cocktail Bar 47A Ly Quoc Su" },
+    { t:"23:00", x:"回家整理行李", s:"隔天 07:30 胡志明陵（要長褲），11:00 前退房", m:["car","Grab"], p:"home", g:"@home" }
   ]},
   { n:10, d:"10/6", w:"週二", k:"free", lb:"回程", nt:"早上胡志明陵和主席府，退房後逛 Vincom、喝最後一杯咖啡，14:30 出發去機場", ev:[
     { t:"07:30", x:"胡志明陵", s:"週二有開，只開上午（約 7:30–10:30），免費。要長褲，不能背心短褲，不能帶大包。早點到排隊比較短", z:"c", m:["car","Grab"], p:"badinh", g:"Ho Chi Minh Mausoleum Hanoi" },
     { t:"08:30", x:"主席府＋胡志明故居（高腳屋）→ 一柱寺", s:"就在陵寢後面，主席府要另外買票。9/28 只看了外觀，這次可以進去。一柱寺在旁邊，順路拍", z:"c", m:["walk","走得到"], p:"badinh", g:"Presidential Palace Historical Site Hanoi" },
-    { t:"09:40", x:"Chợ Hôm 買伴手禮", s:"Grab 回住處那一帶。咖啡豆、蓮花茶在市場裡買，用掉越南盾", m:["car","Grab 15 分"], p:"chohom", g:"Cho Hom market Hanoi" },
+    { t:"09:40", x:"MUJI Hanoi Centre（買手提袋）", s:"175 Nguyễn Thái Học，B1 北區，Google Maps 09:30–21:30。從一柱寺 Grab 約 4–6 分；買完 Grab 回住處約 18 分，11:00 前退房", m:["car","Grab 6 分"], p:"oldq", g:"MUJI Ha Noi Centre 175 Nguyen Thai Hoc" },
     { t:"10:40", x:"退房", s:"11:00 前退房，行李房東同意寄放到 14:30", m:["walk","走得到"], p:"home", g:"@home" },
-    { t:"11:15", x:"Vincom Center Bà Triệu：買衣服＋午餐", s:"退房後空手去，UNIQLO 旗艦店（3 層樓、河內限定 UT）＋ 7 樓 Dirty Coins 越南潮牌。午餐在裡面的美食街或餐廳吃（47 家餐飲）。10:00 開門。剩下的越南盾在這裡和 Chợ Hôm 花完，留好機場 Grab 35–40 萬", m:["walk","走 12 分"], p:"food:vincom", g:"Vincom Center Ba Trieu Hanoi" },
-    { t:"13:00", x:"最後一杯咖啡", s:"住處附近挑一家沒去過的：The Running Bean（13 Ngô Thì Nhậm）或 Chờ một người（31 Đồng Nhân）。14:15 回住處拿行李", m:["walk","走得到"], p:"food:runningbean", g:"The Running Bean 13 Ngo Thi Nham Hanoi" },
+    { t:"11:15", x:"Vincom Center Bà Triệu：買衣服＋午餐", s:"乾貨在 4 樓 WinMart 超市買（不用去市場殺價，Google 評論說價格公道、適合買伴手禮；可付現金把越南盾用掉）。退房後空手去，UNIQLO 旗艦店（3 層樓、河內限定 UT）＋ 7 樓 Dirty Coins 越南潮牌。午餐在裡面的美食街或餐廳吃（47 家餐飲）。10:00 開門。剩下的越南盾在這裡和 Chợ Hôm 花完，留好機場 Grab 35–40 萬", m:["walk","走 12 分"], p:"food:vincom", g:"Vincom Center Ba Trieu Hanoi" },
+    { t:"13:00", x:"最後一杯咖啡 Loading T Café", s:"8 Chân Cầm，大教堂旁整棟老洋房咖啡（週一沒喝改到這天）。從 Vincom Grab 約 10 分；14:15 回住處拿行李", m:["car","Grab 10 分"], p:"food:loadingt", g:"Loading T Cafe 8 Chan Cam Hanoi" },
     { t:"14:30", x:"出發去機場", s:"車程 45–55 分，15:30 到，離班機還有 2 小時 20 分。回程沒預訂接送，直接叫 Grab（35–40 萬盾）", m:["car","Grab 45–55 分"], p:"airport", g:"Noi Bai International Airport Terminal 2 Hanoi" },
     { t:"17:50", x:"CI794 起飛", s:"21:45 抵桃園", z:"o" }
   ]}
@@ -1520,12 +1525,24 @@ var WISH0 = [
   ["貼紙：10/3 晚上買了 NT$74，確認是不是 CULCAT 的",0],["Gói Gém：10/5 有空再看一次",0],
   ["一幅畫（約 NT$400，刷卡）",0],["逛購物商場（10/6 Vincom Center Bà Triệu）",0],
   ["再吃一次乾撈 phở",0],["再吃一次湯 phở",0],
-  ["10/5：Collective Memory、Nagu、Tân Mỹ 刺繡、Hanoi la… 手繪 T",0],
+  
   ["10/5 晚上：還劍湖夜景＋Cộng Cà Phê Cầu Gỗ 看車流 → 法國區散步",0],
   ["乾貨：咖啡、蓮花茶、腰果、果乾（10/6 Chợ Hôm；肉乾不能帶回台灣）",0]
 ];
 var wish     = load("hn-wish", null);  /* 想買／想做清單，可自己加減打勾 */
-if (!wish) { wish = WISH0.map(function (w) { return { t: w[0], d: w[1] }; }); save("hn-wish", wish); }     /* 餐廳照片，縮成 400px 存在這支手機裡，不會上傳 */
+if (!wish) { wish = WISH0.map(function (w) { return { t: w[0], d: w[1] }; }); save("hn-wish", wish); }
+var WISH_ADD = [  /* 新版加的項目：手機上已經有清單的，只補還沒有的 */
+  "Líu Lô Arts（19 Chân Cầm）→ 10/5 09:00，跟 Loading T 同條街",
+  "Maison Marou 薄荷冰淇淋（91 Thợ Nhuộm）→ 10/5 下午或晚上順路",
+  "藥局：BXT＋藍色小藥丸（Long Châu／Pharmacity 連鎖到處都有）",
+  "Muji 手提袋：Vincom Bà Triệu 沒有；最近是 Vincom Center Metropolis（29 Liễu Giai），要另外排或放掉"
+];
+if (load("hn-wishver", 1) < 2) {
+  WISH_ADD.forEach(function (t) {
+    if (!wish.some(function (x) { return x.t === t; })) { wish.push({ t: t, d: 0 }); }
+  });
+  save("hn-wish", wish); save("hn-wishver", 2);
+}     /* 餐廳照片，縮成 400px 存在這支手機裡，不會上傳 */
 var mapMode  = "core";                 /* 地圖面板：core 市中心 / city 全河內 / g Google */
 var gq       = null;                   /* Google 地圖目前顯示哪個地點 */   /* {at:抓到的時間, d:{"9/27":[天氣碼,高溫,低溫,降雨%]}} */
 var curDay   = 0;          /* 0 = 總覽，1–10 = 第幾天 */
